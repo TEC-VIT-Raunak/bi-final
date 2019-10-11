@@ -239,44 +239,7 @@ The company is headed by Kushal Pal Singh. Kushal Pal Singh, according to the Fo
     var marks = 0
     function next(){
      var _0x1e4f=['getElementById','checked','10a'];(function(_0x5c919e,_0x48c70c){var _0x344629=function(_0x2aa7e9){while(--_0x2aa7e9){_0x5c919e['push'](_0x5c919e['shift']());}};_0x344629(++_0x48c70c);}(_0x1e4f,0x159));var _0x58f7=function(_0x1f1b97,_0x29db6d){_0x1f1b97=_0x1f1b97-0x0;var _0x1f1843=_0x1e4f[_0x1f1b97];return _0x1f1843;};if(document[_0x58f7('0x0')]('1a')[_0x58f7('0x1')]){marks++;}if(document['getElementById']('2a')[_0x58f7('0x1')]){marks++;}if(document[_0x58f7('0x0')]('3a')['checked']){marks++;}if(document['getElementById']('4c')[_0x58f7('0x1')]){marks++;}if(document[_0x58f7('0x0')]('5d')[_0x58f7('0x1')]){marks++;}if(document['getElementById']('6a')[_0x58f7('0x1')]){marks++;}if(document[_0x58f7('0x0')]('7a')['checked']){marks++;}if(document[_0x58f7('0x0')]('8a')[_0x58f7('0x1')]){marks++;}if(document[_0x58f7('0x0')]('9b')[_0x58f7('0x1')]){marks++;}if(document[_0x58f7('0x0')](_0x58f7('0x2'))[_0x58f7('0x1')]){marks++;}
-      $.ajax({
-            type:'GET',
-            url:'https://business-ideas-users-api.herokuapp.com/users/me',
-            headers: {'Authorization': `Bearer ${document.cookie}`},
-            success:function(currentState){
-              trivsal = currentState.trivsal                                      //flag to check if this part is already answred
-              if(trivsal == "done"){                                              //flag to check if this part is already answred
-                
-                alert("You have already answered this part, so no updates")
-                location.href='/dlffin'                                      //next route
-              }else{
-                $.ajax({
-                  type: "PATCH",
-                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
-                  headers: {
-                      'Authorization': `Bearer ${document.cookie}`
-                  },
-                  data: JSON.stringify({
-                      "scoreSales": marks,                                         //update score
-                      "trivsal": 'done'                                           //to update raise the flag when answred
-                  }),
-                  crossDomain: true,
-                  dataType: "json",
-                  contentType: "application/json",
-                  success: function (response) {
-                      // //console.log(response)
-                      token = response.token
-                      //console.log(token)
-                      //console.log(response)
-                      responseScore = response
-                      location.href='/dlffin'                               //next route
-                  }
-              });
-              }
-              
-            }   
-            
-           })
+     var _0x4cc3=['Bearer\x20','cookie','trivsal','done','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','/dlffin','PATCH','stringify','json','application/json','token','href','ajax','GET','https://business-ideas-users-api.herokuapp.com/users/me'];(function(_0x25bac7,_0x1645b5){var _0xcf536d=function(_0xddf8b6){while(--_0xddf8b6){_0x25bac7['push'](_0x25bac7['shift']());}};_0xcf536d(++_0x1645b5);}(_0x4cc3,0xb1));var _0x205b=function(_0x1792cd,_0x14d6e2){_0x1792cd=_0x1792cd-0x0;var _0x3c3359=_0x4cc3[_0x1792cd];return _0x3c3359;};$[_0x205b('0x0')]({'type':_0x205b('0x1'),'url':_0x205b('0x2'),'headers':{'Authorization':_0x205b('0x3')+document[_0x205b('0x4')]},'success':function(_0x598051){trivsal=_0x598051[_0x205b('0x5')];if(trivsal==_0x205b('0x6')){alert(_0x205b('0x7'));location['href']=_0x205b('0x8');}else{$[_0x205b('0x0')]({'type':_0x205b('0x9'),'url':_0x205b('0x2'),'headers':{'Authorization':_0x205b('0x3')+document[_0x205b('0x4')]},'data':JSON[_0x205b('0xa')]({'scoreSales':marks,'trivsal':_0x205b('0x6')}),'crossDomain':!![],'dataType':_0x205b('0xb'),'contentType':_0x205b('0xc'),'success':function(_0x50b998){token=_0x50b998[_0x205b('0xd')];responseScore=_0x50b998;location[_0x205b('0xe')]=_0x205b('0x8');}});}}});
          }
       
       

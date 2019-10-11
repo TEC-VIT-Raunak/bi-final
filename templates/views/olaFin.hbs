@@ -206,44 +206,7 @@
     var marks = 0
     function next(){
      var _0x1c7c=['getElementById','checked'];(function(_0x3a07e4,_0x5831be){var _0x1d8ec7=function(_0x447d5c){while(--_0x447d5c){_0x3a07e4['push'](_0x3a07e4['shift']());}};_0x1d8ec7(++_0x5831be);}(_0x1c7c,0x152));var _0x4030=function(_0x28718e,_0x2d9b54){_0x28718e=_0x28718e-0x0;var _0x5bebaa=_0x1c7c[_0x28718e];return _0x5bebaa;};if(document[_0x4030('0x0')]('1d')[_0x4030('0x1')]){marks++;}if(document[_0x4030('0x0')]('2c')[_0x4030('0x1')]){marks++;}if(document[_0x4030('0x0')]('3a')[_0x4030('0x1')]){marks++;}if(document[_0x4030('0x0')]('4b')[_0x4030('0x1')]){marks++;}if(document[_0x4030('0x0')]('5a')['checked']){marks++;}if(document[_0x4030('0x0')]('6d')[_0x4030('0x1')]){marks++;}if(document[_0x4030('0x0')]('7a')[_0x4030('0x1')]){marks++;}if(document[_0x4030('0x0')]('8c')[_0x4030('0x1')]){marks++;}if(document['getElementById']('9b')[_0x4030('0x1')]){marks++;}if(document[_0x4030('0x0')]('10b')[_0x4030('0x1')]){marks++;}
-      $.ajax({
-            type:'GET',
-            url:'https://business-ideas-users-api.herokuapp.com/users/me',
-            headers: {'Authorization': `Bearer ${document.cookie}`},
-            success:function(currentState){
-              trivfin = currentState.trivfin                                      //flag to check if this part is already answred
-              if(trivfin == "done"){                                              //flag to check if this part is already answred
-                
-                alert("You have already answered this part, so no updates")
-                location.href='/olafin'                                      //next route
-              }else{
-                $.ajax({
-                  type: "PATCH",
-                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
-                  headers: {
-                      'Authorization': `Bearer ${document.cookie}`
-                  },
-                  data: JSON.stringify({
-                      "scoreFinance": marks,                                         //update score
-                      "trivfin": 'done'                                           //to update raise the flag when answred
-                  }),
-                  crossDomain: true,
-                  dataType: "json",
-                  contentType: "application/json",
-                  success: function (response) {
-                      // //console.log(response)
-                      token = response.token
-                      //console.log(token)
-                      //console.log(response)
-                      responseScore = response
-                      location.href='/olapro'                               //next route
-                  }
-              });
-              }
-              
-            }   
-            
-           })
+      var _0x5946=['https://business-ideas-users-api.herokuapp.com/users/me','Bearer\x20','cookie','done','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','href','/olafin','PATCH','stringify','json','application/json','token','ajax','GET'];(function(_0x7d5b06,_0x572592){var _0x46cce0=function(_0x35dc6c){while(--_0x35dc6c){_0x7d5b06['push'](_0x7d5b06['shift']());}};_0x46cce0(++_0x572592);}(_0x5946,0xfa));var _0x1e98=function(_0x3ae857,_0x5204d3){_0x3ae857=_0x3ae857-0x0;var _0x2bd349=_0x5946[_0x3ae857];return _0x2bd349;};$[_0x1e98('0x0')]({'type':_0x1e98('0x1'),'url':_0x1e98('0x2'),'headers':{'Authorization':_0x1e98('0x3')+document[_0x1e98('0x4')]},'success':function(_0xe84d46){trivfin=_0xe84d46['trivfin'];if(trivfin==_0x1e98('0x5')){alert(_0x1e98('0x6'));location[_0x1e98('0x7')]=_0x1e98('0x8');}else{$[_0x1e98('0x0')]({'type':_0x1e98('0x9'),'url':'https://business-ideas-users-api.herokuapp.com/users/me','headers':{'Authorization':_0x1e98('0x3')+document['cookie']},'data':JSON[_0x1e98('0xa')]({'scoreFinance':marks,'trivfin':_0x1e98('0x5')}),'crossDomain':!![],'dataType':_0x1e98('0xb'),'contentType':_0x1e98('0xc'),'success':function(_0x4f4c53){token=_0x4f4c53[_0x1e98('0xd')];responseScore=_0x4f4c53;location[_0x1e98('0x7')]='/olapro';}});}}});
          }
       
       

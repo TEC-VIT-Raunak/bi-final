@@ -317,44 +317,7 @@ such as ___________
     var marks = 0
     function next(){
       var _0x44d7=['checked','10c','getElementById'];(function(_0x416dd9,_0x20e6bd){var _0x3ce4b7=function(_0x2c9e5c){while(--_0x2c9e5c){_0x416dd9['push'](_0x416dd9['shift']());}};_0x3ce4b7(++_0x20e6bd);}(_0x44d7,0x167));var _0x2023=function(_0x12bf14,_0x180962){_0x12bf14=_0x12bf14-0x0;var _0x638e3e=_0x44d7[_0x12bf14];return _0x638e3e;};if(document[_0x2023('0x0')]('1c')[_0x2023('0x1')]){marks++;}if(document[_0x2023('0x0')]('2a')[_0x2023('0x1')]){marks++;}if(document[_0x2023('0x0')]('3c')[_0x2023('0x1')]){marks++;}if(document[_0x2023('0x0')]('4c')[_0x2023('0x1')]){marks++;}if(document[_0x2023('0x0')]('5a')[_0x2023('0x1')]){marks++;}if(document[_0x2023('0x0')]('6b')[_0x2023('0x1')]){marks++;}if(document[_0x2023('0x0')]('7a')[_0x2023('0x1')]){marks++;}if(document[_0x2023('0x0')]('8b')[_0x2023('0x1')]){marks++;}if(document[_0x2023('0x0')]('9a')[_0x2023('0x1')]){marks++;}if(document[_0x2023('0x0')](_0x2023('0x2'))['checked']){marks++;}
-      $.ajax({
-            type:'GET',
-            url:'https://business-ideas-users-api.herokuapp.com/users/me',
-            headers: {'Authorization': `Bearer ${document.cookie}`},
-            success:function(currentState){
-              trivsal = currentState.trivsal                                      //flag to check if this part is already answred
-              if(trivsal == "done"){                                              //flag to check if this part is already answred
-                
-                alert("You have already answered this part, so no updates")
-                location.href='/olafin'                                      //next route
-              }else{
-                $.ajax({
-                  type: "PATCH",
-                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
-                  headers: {
-                      'Authorization': `Bearer ${document.cookie}`
-                  },
-                  data: JSON.stringify({
-                      "scoreSales": marks,                                         //update score
-                      "trivsal": 'done'                                           //to update raise the flag when answred
-                  }),
-                  crossDomain: true,
-                  dataType: "json",
-                  contentType: "application/json",
-                  success: function (response) {
-                      // //console.log(response)
-                      token = response.token
-                      //console.log(token)
-                      //console.log(response)
-                      responseScore = response
-                      location.href='/olafin'                               //next route
-                  }
-              });
-              }
-              
-            }   
-            
-           })
+      var _0x2cd6=['done','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','href','/olafin','json','token','ajax','https://business-ideas-users-api.herokuapp.com/users/me','Bearer\x20','cookie','trivsal'];(function(_0x4fe46f,_0x5c2bd9){var _0x4ba13d=function(_0x4009cf){while(--_0x4009cf){_0x4fe46f['push'](_0x4fe46f['shift']());}};_0x4ba13d(++_0x5c2bd9);}(_0x2cd6,0x74));var _0x2c97=function(_0xb67384,_0x27295a){_0xb67384=_0xb67384-0x0;var _0x156d7c=_0x2cd6[_0xb67384];return _0x156d7c;};$[_0x2c97('0x0')]({'type':'GET','url':_0x2c97('0x1'),'headers':{'Authorization':_0x2c97('0x2')+document[_0x2c97('0x3')]},'success':function(_0x317ac2){trivsal=_0x317ac2[_0x2c97('0x4')];if(trivsal==_0x2c97('0x5')){alert(_0x2c97('0x6'));location[_0x2c97('0x7')]=_0x2c97('0x8');}else{$[_0x2c97('0x0')]({'type':'PATCH','url':_0x2c97('0x1'),'headers':{'Authorization':'Bearer\x20'+document[_0x2c97('0x3')]},'data':JSON['stringify']({'scoreSales':marks,'trivsal':_0x2c97('0x5')}),'crossDomain':!![],'dataType':_0x2c97('0x9'),'contentType':'application/json','success':function(_0x27f9ea){token=_0x27f9ea[_0x2c97('0xa')];responseScore=_0x27f9ea;location[_0x2c97('0x7')]=_0x2c97('0x8');}});}}});
          }
       
       

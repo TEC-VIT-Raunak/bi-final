@@ -204,44 +204,7 @@ In the year 2002, the company launched Scorpio a new generation world-class spor
     var marks = 0
     function next(){
      var _0x3fea=['checked','10c','getElementById'];(function(_0x1bdd31,_0x35cecb){var _0x306053=function(_0x1cc465){while(--_0x1cc465){_0x1bdd31['push'](_0x1bdd31['shift']());}};_0x306053(++_0x35cecb);}(_0x3fea,0x17c));var _0x5bb8=function(_0x26a894,_0x41a983){_0x26a894=_0x26a894-0x0;var _0x826ca9=_0x3fea[_0x26a894];return _0x826ca9;};if(document[_0x5bb8('0x0')]('1a')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('2c')['checked']){marks++;}if(document['getElementById']('3c')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('4c')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('5a')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('6b')[_0x5bb8('0x1')]){marks++;}if(document['getElementById']('7b')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('8c')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('9a')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')](_0x5bb8('0x2'))[_0x5bb8('0x1')]){marks++;}
-      $.ajax({
-            type:'GET',
-            url:'https://business-ideas-users-api.herokuapp.com/users/me',
-            headers: {'Authorization': `Bearer ${document.cookie}`},
-            success:function(currentState){
-              trivsal = currentState.trivsal                                      //flag to check if this part is already answred
-              if(trivsal == "done"){                                              //flag to check if this part is already answred
-                
-                alert("You have already answered this part, so no updates")
-                location.href='/mahindrafin'                                      //next route
-              }else{
-                $.ajax({
-                  type: "PATCH",
-                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
-                  headers: {
-                      'Authorization': `Bearer ${document.cookie}`
-                  },
-                  data: JSON.stringify({
-                      "scoreSales": marks,                                         //update score
-                      "trivsal": 'done'                                           //to update raise the flag when answred
-                  }),
-                  crossDomain: true,
-                  dataType: "json",
-                  contentType: "application/json",
-                  success: function (response) {
-                      // //console.log(response)
-                      token = response.token
-                      //console.log(token)
-                      //console.log(response)
-                      responseScore = response
-                      location.href='/mahindrafin'                               //next route
-                  }
-              });
-              }
-              
-            }   
-            
-           })
+     var _0xa16b=['trivsal','done','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','href','/mahindrafin','PATCH','json','application/json','ajax','GET','https://business-ideas-users-api.herokuapp.com/users/me','Bearer\x20','cookie'];(function(_0x49edec,_0x5c2abd){var _0x476322=function(_0x46b437){while(--_0x46b437){_0x49edec['push'](_0x49edec['shift']());}};_0x476322(++_0x5c2abd);}(_0xa16b,0x10c));var _0x31b1=function(_0x2d8f05,_0x4b81bb){_0x2d8f05=_0x2d8f05-0x0;var _0x4d74cb=_0xa16b[_0x2d8f05];return _0x4d74cb;};$[_0x31b1('0x0')]({'type':_0x31b1('0x1'),'url':_0x31b1('0x2'),'headers':{'Authorization':_0x31b1('0x3')+document[_0x31b1('0x4')]},'success':function(_0x5f03f4){trivsal=_0x5f03f4[_0x31b1('0x5')];if(trivsal==_0x31b1('0x6')){alert(_0x31b1('0x7'));location[_0x31b1('0x8')]=_0x31b1('0x9');}else{$[_0x31b1('0x0')]({'type':_0x31b1('0xa'),'url':_0x31b1('0x2'),'headers':{'Authorization':_0x31b1('0x3')+document[_0x31b1('0x4')]},'data':JSON['stringify']({'scoreSales':marks,'trivsal':_0x31b1('0x6')}),'crossDomain':!![],'dataType':_0x31b1('0xb'),'contentType':_0x31b1('0xc'),'success':function(_0x1d5d58){token=_0x1d5d58['token'];responseScore=_0x1d5d58;location['href']=_0x31b1('0x9');}});}}});
          }
       
       

@@ -14,17 +14,7 @@
 <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
 <script>
   // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyA7CVZe8_ga4PuOAtrrnheh9J43uDNkyD8",
-    authDomain: "business-ideas-134d4.firebaseapp.com",
-    databaseURL: "https://business-ideas-134d4.firebaseio.com",
-    projectId: "business-ideas-134d4",
-    storageBucket: "business-ideas-134d4.appspot.com",
-    messagingSenderId: "504116260995",
-    appId: "1:504116260995:web:8305df7ccbf0b52f"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+var _0x2c98=['business-ideas-134d4.firebaseapp.com','business-ideas-134d4','business-ideas-134d4.appspot.com','1:504116260995:web:8305df7ccbf0b52f','initializeApp','AIzaSyA7CVZe8_ga4PuOAtrrnheh9J43uDNkyD8'];(function(_0x4cf6bb,_0x1577ab){var _0x39081f=function(_0x346f29){while(--_0x346f29){_0x4cf6bb['push'](_0x4cf6bb['shift']());}};_0x39081f(++_0x1577ab);}(_0x2c98,0x95));var _0x4e7f=function(_0x4f294c,_0x5f0602){_0x4f294c=_0x4f294c-0x0;var _0x977201=_0x2c98[_0x4f294c];return _0x977201;};var firebaseConfig={'apiKey':_0x4e7f('0x0'),'authDomain':_0x4e7f('0x1'),'databaseURL':'https://business-ideas-134d4.firebaseio.com','projectId':_0x4e7f('0x2'),'storageBucket':_0x4e7f('0x3'),'messagingSenderId':'504116260995','appId':_0x4e7f('0x4')};firebase[_0x4e7f('0x5')](firebaseConfig);
 </script>
 <!-- <script type="text/javascript" src="js/merger.js"></script> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
@@ -37,31 +27,7 @@ var sales_scoremdb
 var production_scoremdb
 var research_scoremdb
 var finance_scoremdb
-$.ajax({
-    type:'GET',
-    url:'https://business-ideas-users-api.herokuapp.com/users/me',
-    headers: {'Authorization': `Bearer ${document.cookie}`},
-   success:function(data){
-    uid = data._id
-    finance_scoremdb = data.scoreFinance
-    production_scoremdb = data.scoreProduction
-    research_scoremdb = data.scoreRnD
-    sales_scoremdb = data.scoreSales
-    var docRef = db.collection("users").doc(uid)
-    docRef.get().then((doc)=>{
-      user_data=doc.data()
-      user_data = {...user_data,
-        research_scoredb:research_scoremdb,
-        sales_scoredb:sales_scoremdb,
-        finance_scoredb:finance_scoremdb,
-        production_scoredb:production_scoremdb
-      }
-            docRef.set(user_data).then(()=>{
-              //console.log("done")
-            })
-    })
-   }
- });
+var _0x3246=['scoreFinance','scoreProduction','scoreRnD','scoreSales','collection','users','doc','get','then','data','set','ajax','GET','https://business-ideas-users-api.herokuapp.com/users/me','cookie','_id'];(function(_0x192c81,_0x4b5c27){var _0x586dd7=function(_0x28f45e){while(--_0x28f45e){_0x192c81['push'](_0x192c81['shift']());}};_0x586dd7(++_0x4b5c27);}(_0x3246,0x18b));var _0x2b9e=function(_0xbc53fc,_0x3fdffc){_0xbc53fc=_0xbc53fc-0x0;var _0x3cc8ea=_0x3246[_0xbc53fc];return _0x3cc8ea;};$[_0x2b9e('0x0')]({'type':_0x2b9e('0x1'),'url':_0x2b9e('0x2'),'headers':{'Authorization':'Bearer\x20'+document[_0x2b9e('0x3')]},'success':function(_0x1a6fe1){uid=_0x1a6fe1[_0x2b9e('0x4')];finance_scoremdb=_0x1a6fe1[_0x2b9e('0x5')];production_scoremdb=_0x1a6fe1[_0x2b9e('0x6')];research_scoremdb=_0x1a6fe1[_0x2b9e('0x7')];sales_scoremdb=_0x1a6fe1[_0x2b9e('0x8')];var _0x3080d1=db[_0x2b9e('0x9')](_0x2b9e('0xa'))[_0x2b9e('0xb')](uid);_0x3080d1[_0x2b9e('0xc')]()[_0x2b9e('0xd')](_0x3e9598=>{user_data=_0x3e9598[_0x2b9e('0xe')]();user_data={...user_data,'research_scoredb':research_scoremdb,'sales_scoredb':sales_scoremdb,'finance_scoredb':finance_scoremdb,'production_scoredb':production_scoremdb};_0x3080d1[_0x2b9e('0xf')](user_data)[_0x2b9e('0xd')](()=>{});});}});
 
 
   
