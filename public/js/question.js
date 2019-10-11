@@ -9,20 +9,20 @@ const urlParams = new URLSearchParams(window.location.search);
 //const myParam = urlParams.get('id');
 const myParam =  JSON.parse(localStorage.getItem('user')).user.company;
 
-//console.log(myParam)
+console.log(myParam)
 let companychoice = myParam
 
 
 
 function myFunction(option) {
-    //console.log(option)
+    console.log(option)
     answer = option
 }
 
 
 
 window.onload=()=>{
-    //console.log(myParam)
+    console.log(myParam)
     if(!document.cookie){
         
         location.href='/login'
@@ -36,7 +36,7 @@ window.onload=()=>{
            success:function(data){
             count = data.counter
             if(count>=4){
-                location.href = '/scoreboardr1'
+                location.href = '/loader'
             }
         }
     })
@@ -78,7 +78,7 @@ const submit = () => {
             crossDomain: true,
             dataType: "json",
             success: function (response) {
-                //console.log(response)
+                console.log(response)
                 resp = response
                 document.getElementById("question").innerHTML = response.question
                 
@@ -104,9 +104,9 @@ const submit = () => {
         let fin = parseInt(resp[answer].score.finance, 10)
         let pro = parseInt(resp[answer].score.production, 10)
         let sales = parseInt(resp[answer].score.sales, 10) 
-        // //console.log(resp[answer].score)
-        //console.log(rnd,fin,pro,sales)
-        // //console.log()
+        // console.log(resp[answer].score)
+        console.log(rnd,fin,pro,sales)
+        // console.log()
         answer=resp[answer].nextid
         
         $.ajax({
@@ -128,10 +128,10 @@ const submit = () => {
             contentType: "application/json",
             success: function (response) {
             	
-                // //console.log(response)
+                // console.log(response)
                 token = response.token
-                //console.log(token)
-                //console.log(response)
+                console.log(token)
+                console.log(response)
                  responseScore = response
             }
         });
@@ -152,7 +152,7 @@ const submit = () => {
         crossDomain: true,
         dataType: "json",
         success: function (response) {
-            //console.log(response)
+            console.log(response)
             resp = response
             document.getElementById("question").innerHTML = response.question
             
@@ -208,8 +208,8 @@ const submit = () => {
                 production_scoredb:production_scoremdb
               }
                     docRef.set(user_data).then(()=>{
-                      //console.log("done")
-                      location.href = '/scoreboardr1'
+                      console.log("done")
+                      location.href = '/loader'
                     })
             })
            }
@@ -225,7 +225,7 @@ function expand(){
 }
 $(document).bind("contextmenu",function(e){
     e.preventDefault();
-    //console.log(e.pageX + "," + e.pageY);
+    console.log(e.pageX + "," + e.pageY);
     $("#cntnr").css("left",e.pageX);
     $("#cntnr").css("top",e.pageY);
    // $("#cntnr").hide(100);        
@@ -253,7 +253,7 @@ const changecolor=()=>{
 }
 
 const Signout = ()=>{
-    //console.log("tried to signout")
+    console.log("tried to signout")
     document.cookie=''
     localStorage.clear()
     location.href='/login'

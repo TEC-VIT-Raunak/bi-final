@@ -32,7 +32,9 @@ app.get('/merger', (req, res) => {
 app.get('/quiz',(req,res)=>{
 	res.render('quiz')
 })
-
+app.get('/loader',(req,res)=>{
+    res.render('loader')
+})
 
 // samsung routes
 app.get('/samsungsal',(req,res)=>{
@@ -107,7 +109,7 @@ app.get('/scoreboardr1',(req,res)=>{
     res.render('scoreboardr1')    
 })
 app.listen(port, () => {
-    //console.log('Server is up on port ' + port)
+    console.log('Server is up on port ' + port)
 })
 app.get('/login', (req, res) => {
     res.render('login')
