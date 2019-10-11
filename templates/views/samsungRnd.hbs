@@ -268,7 +268,45 @@ Unveiled Samsung and HARMAN's '2018 Digital Cockpit'</li>
     var marks = 0
     function next(){
      var _0x19a9=['getElementById','checked','10b'];(function(_0x16217a,_0x4ba84b){var _0x5634a2=function(_0x38618c){while(--_0x38618c){_0x16217a['push'](_0x16217a['shift']());}};_0x5634a2(++_0x4ba84b);}(_0x19a9,0x1b0));var _0x2034=function(_0x31af35,_0x20f0dd){_0x31af35=_0x31af35-0x0;var _0x198ab8=_0x19a9[_0x31af35];return _0x198ab8;};if(document[_0x2034('0x0')]('1b')[_0x2034('0x1')]){marks++;}if(document[_0x2034('0x0')]('2d')[_0x2034('0x1')]){marks++;}if(document[_0x2034('0x0')]('3b')['checked']){marks++;}if(document[_0x2034('0x0')]('4a')[_0x2034('0x1')]){marks++;}if(document[_0x2034('0x0')]('5a')[_0x2034('0x1')]){marks++;}if(document[_0x2034('0x0')]('6c')[_0x2034('0x1')]){marks++;}if(document[_0x2034('0x0')]('7c')[_0x2034('0x1')]){marks++;}if(document[_0x2034('0x0')]('8a')[_0x2034('0x1')]){marks++;}if(document['getElementById']('9d')['checked']){marks++;}if(document[_0x2034('0x0')](_0x2034('0x2'))[_0x2034('0x1')]){marks++;}
-     var _0x1a50=['application/json','token','ajax','GET','https://business-ideas-users-api.herokuapp.com/users/me','cookie','trivrnd','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','href','/question','PATCH','Bearer\x20','stringify','done','true','json'];(function(_0x1a633a,_0x5305a2){var _0x452738=function(_0x5aa736){while(--_0x5aa736){_0x1a633a['push'](_0x1a633a['shift']());}};_0x452738(++_0x5305a2);}(_0x1a50,0x132));var _0xc2d1=function(_0x27a291,_0x100cb4){_0x27a291=_0x27a291-0x0;var _0x316f13=_0x1a50[_0x27a291];return _0x316f13;};$[_0xc2d1('0x0')]({'type':_0xc2d1('0x1'),'url':_0xc2d1('0x2'),'headers':{'Authorization':'Bearer\x20'+document[_0xc2d1('0x3')]},'success':function(_0x544138){trivrnd=_0x544138[_0xc2d1('0x4')];if(trivrnd=='done'){alert(_0xc2d1('0x5'));location[_0xc2d1('0x6')]=_0xc2d1('0x7');}else{$[_0xc2d1('0x0')]({'type':_0xc2d1('0x8'),'url':_0xc2d1('0x2'),'headers':{'Authorization':_0xc2d1('0x9')+document['cookie']},'data':JSON[_0xc2d1('0xa')]({'scoreRnd':marks,'trivrnd':_0xc2d1('0xb'),'flag':_0xc2d1('0xc')}),'crossDomain':!![],'dataType':_0xc2d1('0xd'),'contentType':_0xc2d1('0xe'),'success':function(_0x217922){token=_0x217922[_0xc2d1('0xf')];responseScore=_0x217922;location[_0xc2d1('0x6')]=_0xc2d1('0x7');}});}}});
+      $.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              trivrnd = currentState.trivrnd                                      //flag to check if this part is already answred
+              if(trivrnd == "done"){                                              //flag to check if this part is already answred
+                
+                alert("You have already answered this part, so no updates")
+                location.href='/question'                                      //next route
+              }else{
+                $.ajax({
+                  type: "PATCH",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
+                  headers: {
+                      'Authorization': `Bearer ${document.cookie}`
+                  },
+                  data: JSON.stringify({
+                      "scoreRnd": marks,                                         //update score
+                      "trivrnd": 'done',
+                      "flag": 'true'                                          //to update raise the flag when answred
+                  }),
+                  crossDomain: true,
+                  dataType: "json",
+                  contentType: "application/json",
+                  success: function (response) {
+                      // //console.log(response)
+                      token = response.token
+                      //console.log(token)
+                      //console.log(response)
+                      responseScore = response
+                      location.href='/question'                               //next route
+                  }
+              });
+              }
+              
+            }   
+            
+           })
          }
       
       

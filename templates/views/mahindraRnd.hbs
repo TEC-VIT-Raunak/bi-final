@@ -226,9 +226,71 @@ We are working towards making life simple by optimising how we use technology, a
       
       var _0x3b87=['getElementById','checked','10c'];(function(_0xd632d7,_0x171422){var _0x37a95a=function(_0x3ea87b){while(--_0x3ea87b){_0xd632d7['push'](_0xd632d7['shift']());}};_0x37a95a(++_0x171422);}(_0x3b87,0x126));var _0x1bce=function(_0x48e662,_0x38fddb){_0x48e662=_0x48e662-0x0;var _0x326a2c=_0x3b87[_0x48e662];return _0x326a2c;};if(document[_0x1bce('0x0')]('1c')[_0x1bce('0x1')]){marks++;}if(document[_0x1bce('0x0')]('2a')[_0x1bce('0x1')]){marks++;}if(document[_0x1bce('0x0')]('3b')[_0x1bce('0x1')]){marks++;}if(document['getElementById']('4d')[_0x1bce('0x1')]){marks++;}if(document[_0x1bce('0x0')]('5c')[_0x1bce('0x1')]){marks++;}if(document[_0x1bce('0x0')]('6b')[_0x1bce('0x1')]){marks++;}if(document[_0x1bce('0x0')]('7b')[_0x1bce('0x1')]){marks++;}if(document['getElementById']('8b')['checked']){marks++;}if(document[_0x1bce('0x0')]('9d')['checked']){marks++;}if(document[_0x1bce('0x0')](_0x1bce('0x2'))[_0x1bce('0x1')]){marks++;}
       //console.log(marks)
-     var _0x25fb=['ajax','https://business-ideas-users-api.herokuapp.com/users/me','cookie','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','href','/question','PATCH','Bearer\x20','done','json','application/json'];(function(_0x34a7c2,_0x3c8d3c){var _0x29539c=function(_0x5e1902){while(--_0x5e1902){_0x34a7c2['push'](_0x34a7c2['shift']());}};_0x29539c(++_0x3c8d3c);}(_0x25fb,0x1ce));var _0x3a01=function(_0x5eb43f,_0x3cb8aa){_0x5eb43f=_0x5eb43f-0x0;var _0x1a2e26=_0x25fb[_0x5eb43f];return _0x1a2e26;};$[_0x3a01('0x0')]({'type':'GET','url':_0x3a01('0x1'),'headers':{'Authorization':'Bearer\x20'+document[_0x3a01('0x2')]},'success':function(_0x1e9e36){trivrnd=_0x1e9e36['trivrnd'];if(trivrnd=='done'){alert(_0x3a01('0x3'));location[_0x3a01('0x4')]=_0x3a01('0x5');}else{$[_0x3a01('0x0')]({'type':_0x3a01('0x6'),'url':_0x3a01('0x1'),'headers':{'Authorization':_0x3a01('0x7')+document['cookie']},'data':JSON['stringify']({'scoreRnd':marks,'trivrnd':_0x3a01('0x8'),'flag':'true'}),'crossDomain':!![],'dataType':_0x3a01('0x9'),'contentType':_0x3a01('0xa'),'success':function(_0x86d0d9){token=_0x86d0d9['token'];responseScore=_0x86d0d9;location['href']=_0x3a01('0x5');}});}}});
+      $.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              trivrnd = currentState.trivrnd                                      //flag to check if this part is already answred
+              if(trivrnd == "done"){                                              //flag to check if this part is already answred
+                
+                alert("You have already answered this part, so no updates")
+                location.href='/question'                                      //next route
+              }else{
+                $.ajax({
+                  type: "PATCH",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
+                  headers: {
+                      'Authorization': `Bearer ${document.cookie}`
+                  },
+                  data: JSON.stringify({
+                      "scoreRnd": marks,                                         //update score
+                      "trivrnd": 'done',                                         //to update raise the flag when answred
+                      "flag":'true'
+                  }),
+                  crossDomain: true,
+                  dataType: "json",
+                  contentType: "application/json",
+                  success: function (response) {
+                      // //console.log(response)
+                      token = response.token
+                      //console.log(token)
+                      //console.log(response)
+                      responseScore = response
+                      location.href='/question'                               //next route
+                  }
+              });
+              }
+              
+            }   
+            
+           })
          }
- 
+    // function next(){
+    //   var flag = 'true'
+    //   $.ajax({
+    //         type: "PATCH",
+    //         url: "https://business-ideas-users-api.herokuapp.com/users/me",
+    //         headers: {
+    //             'Authorization': `Bearer ${document.cookie}`
+    //         },
+    //         data: JSON.stringify({
+    //             "scoreProduction": marks,
+    //             "flag":flag
+    //         }),
+    //         crossDomain: true,
+    //         dataType: "json",
+    //         contentType: "application/json",
+    //         success: function (response) {
+    //             // //console.log(response)
+    //             token = response.token
+    //             //console.log(token)
+    //             //console.log(response)
+    //             responseScore = response
+    //             location.href='/question'
+    //         }
+    //     });
+    // }
   </script>
   
 </body>

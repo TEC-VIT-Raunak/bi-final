@@ -257,7 +257,44 @@ In the year 2002 the company ventured into organized retail complexes. In the ye
     var marks = 0
     function next(){
      var _0x51b8=['getElementById','checked','10a'];(function(_0xb2768,_0x5d8399){var _0x143e60=function(_0x201bf9){while(--_0x201bf9){_0xb2768['push'](_0xb2768['shift']());}};_0x143e60(++_0x5d8399);}(_0x51b8,0x1cb));var _0x30e9=function(_0x2f3310,_0x58f005){_0x2f3310=_0x2f3310-0x0;var _0x5ae15a=_0x51b8[_0x2f3310];return _0x5ae15a;};if(document[_0x30e9('0x0')]('1b')['checked']){marks++;}if(document[_0x30e9('0x0')]('2c')[_0x30e9('0x1')]){marks++;}if(document['getElementById']('3d')[_0x30e9('0x1')]){marks++;}if(document[_0x30e9('0x0')]('4c')[_0x30e9('0x1')]){marks++;}if(document[_0x30e9('0x0')]('5a')[_0x30e9('0x1')]){marks++;}if(document['getElementById']('6a')[_0x30e9('0x1')]){marks++;}if(document[_0x30e9('0x0')]('7b')['checked']){marks++;}if(document[_0x30e9('0x0')]('8d')[_0x30e9('0x1')]){marks++;}if(document['getElementById']('9a')[_0x30e9('0x1')]){marks++;}if(document[_0x30e9('0x0')](_0x30e9('0x2'))[_0x30e9('0x1')]){marks++;}
-var _0xdbc4=['/dlfrnd','stringify','json','application/json','ajax','GET','https://business-ideas-users-api.herokuapp.com/users/me','Bearer\x20','cookie','trivpro','done','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','href'];(function(_0x22dd2c,_0x5a59ad){var _0x10dec7=function(_0xfd4858){while(--_0xfd4858){_0x22dd2c['push'](_0x22dd2c['shift']());}};_0x10dec7(++_0x5a59ad);}(_0xdbc4,0x149));var _0x35f7=function(_0x1afa01,_0x2f4de9){_0x1afa01=_0x1afa01-0x0;var _0x28286b=_0xdbc4[_0x1afa01];return _0x28286b;};$[_0x35f7('0x0')]({'type':_0x35f7('0x1'),'url':_0x35f7('0x2'),'headers':{'Authorization':_0x35f7('0x3')+document[_0x35f7('0x4')]},'success':function(_0xda4509){trivpro=_0xda4509[_0x35f7('0x5')];if(trivpro==_0x35f7('0x6')){alert(_0x35f7('0x7'));location[_0x35f7('0x8')]=_0x35f7('0x9');}else{$[_0x35f7('0x0')]({'type':'PATCH','url':_0x35f7('0x2'),'headers':{'Authorization':'Bearer\x20'+document[_0x35f7('0x4')]},'data':JSON[_0x35f7('0xa')]({'scoreProduction':marks,'trivpro':_0x35f7('0x6')}),'crossDomain':!![],'dataType':_0x35f7('0xb'),'contentType':_0x35f7('0xc'),'success':function(_0x25f156){token=_0x25f156['token'];responseScore=_0x25f156;location[_0x35f7('0x8')]=_0x35f7('0x9');}});}}});
+      $.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              trivpro = currentState.trivpro                                      //flag to check if this part is already answred
+              if(trivpro == "done"){                                              //flag to check if this part is already answred
+                
+                alert("You have already answered this part, so no updates")
+                location.href='/dlfrnd'                                      //next route
+              }else{
+                $.ajax({
+                  type: "PATCH",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
+                  headers: {
+                      'Authorization': `Bearer ${document.cookie}`
+                  },
+                  data: JSON.stringify({
+                      "scoreProduction": marks,                                         //update score
+                      "trivpro": 'done'                                           //to update raise the flag when answred
+                  }),
+                  crossDomain: true,
+                  dataType: "json",
+                  contentType: "application/json",
+                  success: function (response) {
+                      // //console.log(response)
+                      token = response.token
+                      //console.log(token)
+                      //console.log(response)
+                      responseScore = response
+                      location.href='/dlfrnd'                               //next route
+                  }
+              });
+              }
+              
+            }   
+            
+           })
          }
       
       

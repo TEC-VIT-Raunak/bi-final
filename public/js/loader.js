@@ -1,1 +1,27 @@
-var _0x5cb1=['scoreFinance','scoreProduction','scoreRnd','users','doc','get','then','set','log','done','href','firestore','ajax','GET','https://business-ideas-users-api.herokuapp.com/users/me','Bearer\x20','cookie','_id'];(function(_0x341916,_0x1f3db0){var _0x578fd5=function(_0x34769d){while(--_0x34769d){_0x341916['push'](_0x341916['shift']());}};_0x578fd5(++_0x1f3db0);}(_0x5cb1,0xe3));var _0x5589=function(_0x2b919e,_0x19b370){_0x2b919e=_0x2b919e-0x0;var _0x534a3d=_0x5cb1[_0x2b919e];return _0x534a3d;};var db=firebase[_0x5589('0x0')]();$[_0x5589('0x1')]({'type':_0x5589('0x2'),'url':_0x5589('0x3'),'headers':{'Authorization':_0x5589('0x4')+document[_0x5589('0x5')]},'success':function(_0x28ad5b){uid=_0x28ad5b[_0x5589('0x6')];finance_scoremdb=_0x28ad5b[_0x5589('0x7')];production_scoremdb=_0x28ad5b[_0x5589('0x8')];research_scoremdb=_0x28ad5b[_0x5589('0x9')];sales_scoremdb=_0x28ad5b['scoreSales'];var _0x230588=db['collection'](_0x5589('0xa'))[_0x5589('0xb')](uid);_0x230588[_0x5589('0xc')]()[_0x5589('0xd')](_0x4e2510=>{user_data=_0x4e2510['data']();user_data={...user_data,'research_scoredb':research_scoremdb,'sales_scoredb':sales_scoremdb,'finance_scoredb':finance_scoremdb,'production_scoredb':production_scoremdb};_0x230588[_0x5589('0xe')](user_data)[_0x5589('0xd')](()=>{console[_0x5589('0xf')](_0x5589('0x10'));location[_0x5589('0x11')]='/scoreboardr1';});});}});
+var db = firebase.firestore();
+$.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+           success:function(data){
+            uid = data._id
+            finance_scoremdb = data.scoreFinance
+            production_scoremdb = data.scoreProduction
+            research_scoremdb = data.scoreRnd
+            sales_scoremdb = data.scoreSales
+            var docRef = db.collection("users").doc(uid)
+            docRef.get().then((doc)=>{
+              user_data=doc.data()
+              user_data = {...user_data,
+                research_scoredb:research_scoremdb,
+                sales_scoredb:sales_scoremdb,
+                finance_scoredb:finance_scoremdb,
+                production_scoredb:production_scoremdb
+              }
+                    docRef.set(user_data).then(()=>{
+                      console.log("done")
+                      location.href = '/scoreboardr1'
+                    })
+            })
+           }
+         });

@@ -193,7 +193,44 @@
       
       var _0x3b87=['getElementById','checked','10a'];(function(_0xd632d7,_0x171422){var _0x37a95a=function(_0x3ea87b){while(--_0x3ea87b){_0xd632d7['push'](_0xd632d7['shift']());}};_0x37a95a(++_0x171422);}(_0x3b87,0x126));var _0x1bce=function(_0x48e662,_0x38fddb){_0x48e662=_0x48e662-0x0;var _0x326a2c=_0x3b87[_0x48e662];return _0x326a2c;};if(document[_0x1bce('0x0')]('1d')[_0x1bce('0x1')]){marks++;}if(document[_0x1bce('0x0')]('2c')[_0x1bce('0x1')]){marks++;}if(document[_0x1bce('0x0')]('3d')[_0x1bce('0x1')]){marks++;}if(document['getElementById']('4d')[_0x1bce('0x1')]){marks++;}if(document[_0x1bce('0x0')]('5a')[_0x1bce('0x1')]){marks++;}if(document[_0x1bce('0x0')]('6c')[_0x1bce('0x1')]){marks++;}if(document[_0x1bce('0x0')]('7c')[_0x1bce('0x1')]){marks++;}if(document['getElementById']('8a')['checked']){marks++;}if(document[_0x1bce('0x0')]('9a')['checked']){marks++;}if(document[_0x1bce('0x0')](_0x1bce('0x2'))[_0x1bce('0x1')]){marks++;}
       //console.log(marks)
-      var _0x1261=['GET','https://business-ideas-users-api.herokuapp.com/users/me','Bearer\x20','cookie','trivpro','done','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','href','/mahindrarnd','ajax','PATCH','json','application/json','token'];(function(_0x4e5b20,_0x4879f8){var _0x1b113d=function(_0x5a0312){while(--_0x5a0312){_0x4e5b20['push'](_0x4e5b20['shift']());}};_0x1b113d(++_0x4879f8);}(_0x1261,0x15e));var _0x5ab4=function(_0x11b8a2,_0x246a26){_0x11b8a2=_0x11b8a2-0x0;var _0x41879d=_0x1261[_0x11b8a2];return _0x41879d;};$['ajax']({'type':_0x5ab4('0x0'),'url':_0x5ab4('0x1'),'headers':{'Authorization':_0x5ab4('0x2')+document[_0x5ab4('0x3')]},'success':function(_0xbb5059){trivpro=_0xbb5059[_0x5ab4('0x4')];if(trivpro==_0x5ab4('0x5')){alert(_0x5ab4('0x6'));location[_0x5ab4('0x7')]=_0x5ab4('0x8');}else{$[_0x5ab4('0x9')]({'type':_0x5ab4('0xa'),'url':_0x5ab4('0x1'),'headers':{'Authorization':'Bearer\x20'+document[_0x5ab4('0x3')]},'data':JSON['stringify']({'scoreProduction':marks,'trivpro':'done'}),'crossDomain':!![],'dataType':_0x5ab4('0xb'),'contentType':_0x5ab4('0xc'),'success':function(_0x566269){token=_0x566269[_0x5ab4('0xd')];responseScore=_0x566269;location[_0x5ab4('0x7')]=_0x5ab4('0x8');}});}}});
+      $.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              trivpro = currentState.trivpro                                      //flag to check if this part is already answred
+              if(trivpro == "done"){                                              //flag to check if this part is already answred
+                
+                alert("You have already answered this part, so no updates")
+                location.href='/mahindrarnd'                                      //next route
+              }else{
+                $.ajax({
+                  type: "PATCH",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
+                  headers: {
+                      'Authorization': `Bearer ${document.cookie}`
+                  },
+                  data: JSON.stringify({
+                      "scoreProduction": marks,                                         //update score
+                      "trivpro": 'done'                                           //to update raise the flag when answred
+                  }),
+                  crossDomain: true,
+                  dataType: "json",
+                  contentType: "application/json",
+                  success: function (response) {
+                      // //console.log(response)
+                      token = response.token
+                      //console.log(token)
+                      //console.log(response)
+                      responseScore = response
+                      location.href='/mahindrarnd'                               //next route
+                  }
+              });
+              }
+              
+            }   
+            
+           })
          }
     
   </script>

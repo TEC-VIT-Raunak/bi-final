@@ -205,7 +205,44 @@ Indian Oil, the state-owned oil company of India, has peered into the future, de
     var marks = 0
     function next(){
      var _0x4e1c=['getElementById','checked','10a'];(function(_0x24ee5b,_0x24aeb4){var _0x579c10=function(_0x52570a){while(--_0x52570a){_0x24ee5b['push'](_0x24ee5b['shift']());}};_0x579c10(++_0x24aeb4);}(_0x4e1c,0xd2));var _0x46ad=function(_0x16e4c5,_0x3e5f09){_0x16e4c5=_0x16e4c5-0x0;var _0x4ed869=_0x4e1c[_0x16e4c5];return _0x4ed869;};if(document[_0x46ad('0x0')]('1c')[_0x46ad('0x1')]){marks++;}if(document['getElementById']('2b')[_0x46ad('0x1')]){marks++;}if(document[_0x46ad('0x0')]('3a')[_0x46ad('0x1')]){marks++;}if(document['getElementById']('4d')[_0x46ad('0x1')]){marks++;}if(document[_0x46ad('0x0')]('5a')[_0x46ad('0x1')]){marks++;}if(document[_0x46ad('0x0')]('6d')[_0x46ad('0x1')]){marks++;}if(document[_0x46ad('0x0')]('7b')[_0x46ad('0x1')]){marks++;}if(document['getElementById']('8a')[_0x46ad('0x1')]){marks++;}if(document[_0x46ad('0x0')]('9a')[_0x46ad('0x1')]){marks++;}if(document[_0x46ad('0x0')](_0x46ad('0x2'))['checked']){marks++;}
-     var _0x52cb=['application/json','token','/indianoilrnd','ajax','https://business-ideas-users-api.herokuapp.com/users/me','cookie','trivpro','done','href','PATCH','Bearer\x20','stringify','json'];(function(_0x2699a9,_0x501e82){var _0x5b6c40=function(_0xa3de42){while(--_0xa3de42){_0x2699a9['push'](_0x2699a9['shift']());}};_0x5b6c40(++_0x501e82);}(_0x52cb,0x85));var _0x10d6=function(_0x3ffa65,_0xc40cea){_0x3ffa65=_0x3ffa65-0x0;var _0x20aaa0=_0x52cb[_0x3ffa65];return _0x20aaa0;};$[_0x10d6('0x0')]({'type':'GET','url':_0x10d6('0x1'),'headers':{'Authorization':'Bearer\x20'+document[_0x10d6('0x2')]},'success':function(_0x1a7f8b){trivpro=_0x1a7f8b[_0x10d6('0x3')];if(trivpro==_0x10d6('0x4')){alert('You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates');location[_0x10d6('0x5')]='/indianoilrnd';}else{$[_0x10d6('0x0')]({'type':_0x10d6('0x6'),'url':_0x10d6('0x1'),'headers':{'Authorization':_0x10d6('0x7')+document[_0x10d6('0x2')]},'data':JSON[_0x10d6('0x8')]({'scoreProduction':marks,'trivpro':'done'}),'crossDomain':!![],'dataType':_0x10d6('0x9'),'contentType':_0x10d6('0xa'),'success':function(_0x4ce5b3){token=_0x4ce5b3[_0x10d6('0xb')];responseScore=_0x4ce5b3;location[_0x10d6('0x5')]=_0x10d6('0xc');}});}}});
+      $.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              trivpro = currentState.trivpro                                      //flag to check if this part is already answred
+              if(trivpro == "done"){                                              //flag to check if this part is already answred
+                
+                alert("You have already answered this part, so no updates")
+                location.href='/indianoilrnd'                                      //next route
+              }else{
+                $.ajax({
+                  type: "PATCH",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
+                  headers: {
+                      'Authorization': `Bearer ${document.cookie}`
+                  },
+                  data: JSON.stringify({
+                      "scoreProduction": marks,                                         //update score
+                      "trivpro": 'done'                                           //to update raise the flag when answred
+                  }),
+                  crossDomain: true,
+                  dataType: "json",
+                  contentType: "application/json",
+                  success: function (response) {
+                      // //console.log(response)
+                      token = response.token
+                      //console.log(token)
+                      //console.log(response)
+                      responseScore = response
+                      location.href='/indianoilrnd'                               //next route
+                  }
+              });
+              }
+              
+            }   
+            
+           })
          }
       
       

@@ -304,7 +304,45 @@
     var marks = 0
     function next(){
      var _0x3951=['checked','getElementById'];(function(_0xd64edc,_0x337cf3){var _0x38b478=function(_0x5a07ed){while(--_0x5a07ed){_0xd64edc['push'](_0xd64edc['shift']());}};_0x38b478(++_0x337cf3);}(_0x3951,0xbb));var _0x4a9a=function(_0x10ddb0,_0x14bfe4){_0x10ddb0=_0x10ddb0-0x0;var _0x2f42ce=_0x3951[_0x10ddb0];return _0x2f42ce;};if(document[_0x4a9a('0x0')]('1c')[_0x4a9a('0x1')]){marks++;}if(document[_0x4a9a('0x0')]('2c')[_0x4a9a('0x1')]){marks++;}if(document[_0x4a9a('0x0')]('3a')[_0x4a9a('0x1')]){marks++;}if(document[_0x4a9a('0x0')]('4b')[_0x4a9a('0x1')]){marks++;}if(document[_0x4a9a('0x0')]('5d')[_0x4a9a('0x1')]){marks++;}if(document['getElementById']('6d')[_0x4a9a('0x1')]){marks++;}if(document['getElementById']('7c')[_0x4a9a('0x1')]){marks++;}if(document[_0x4a9a('0x0')]('8c')[_0x4a9a('0x1')]){marks++;}if(document['getElementById']('9c')['checked']){marks++;}if(document[_0x4a9a('0x0')]('10b')[_0x4a9a('0x1')]){marks++;}
-     var _0x7af9=['json','application/json','token','ajax','GET','https://business-ideas-users-api.herokuapp.com/users/me','cookie','done','href','/question','PATCH','Bearer\x20','stringify','true'];(function(_0x4adc7d,_0x25f49c){var _0x591923=function(_0x352423){while(--_0x352423){_0x4adc7d['push'](_0x4adc7d['shift']());}};_0x591923(++_0x25f49c);}(_0x7af9,0x145));var _0x4ef6=function(_0x11cc51,_0x4ec75e){_0x11cc51=_0x11cc51-0x0;var _0x3fa6ee=_0x7af9[_0x11cc51];return _0x3fa6ee;};$[_0x4ef6('0x0')]({'type':_0x4ef6('0x1'),'url':_0x4ef6('0x2'),'headers':{'Authorization':'Bearer\x20'+document[_0x4ef6('0x3')]},'success':function(_0x5d6aa0){trivrnd=_0x5d6aa0['trivrnd'];if(trivrnd==_0x4ef6('0x4')){alert('You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates');location[_0x4ef6('0x5')]=_0x4ef6('0x6');}else{$['ajax']({'type':_0x4ef6('0x7'),'url':_0x4ef6('0x2'),'headers':{'Authorization':_0x4ef6('0x8')+document['cookie']},'data':JSON[_0x4ef6('0x9')]({'scoreRnd':marks,'trivrnd':_0x4ef6('0x4'),'flag':_0x4ef6('0xa')}),'crossDomain':!![],'dataType':_0x4ef6('0xb'),'contentType':_0x4ef6('0xc'),'success':function(_0x2dcb23){token=_0x2dcb23[_0x4ef6('0xd')];responseScore=_0x2dcb23;location[_0x4ef6('0x5')]=_0x4ef6('0x6');}});}}});
+      $.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              trivrnd = currentState.trivrnd                                      //flag to check if this part is already answred
+              if(trivrnd == "done"){                                              //flag to check if this part is already answred
+                
+                alert("You have already answered this part, so no updates")
+                location.href='/question'                                      //next route
+              }else{
+                $.ajax({
+                  type: "PATCH",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
+                  headers: {
+                      'Authorization': `Bearer ${document.cookie}`
+                  },
+                  data: JSON.stringify({
+                      "scoreRnd": marks,                                         //update score
+                      "trivrnd": 'done',                                           //to update raise the flag when answred
+                  		"flag":"true"
+                  }),
+                  crossDomain: true,
+                  dataType: "json",
+                  contentType: "application/json",
+                  success: function (response) {
+                      // //console.log(response)
+                      token = response.token
+                      //console.log(token)
+                      //console.log(response)
+                      responseScore = response
+                      location.href='/question'                               //next route
+                  }
+              });
+              }
+              
+            }   
+            
+           })
          }
       
       

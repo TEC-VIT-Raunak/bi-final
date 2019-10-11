@@ -218,7 +218,44 @@ In 1996, the company suffered hugely in their Revenue growth & operating income.
     var marks = 0
     function next(){
      var _0x136d=['checked','getElementById'];(function(_0x1d2318,_0x303fcf){var _0x529ace=function(_0x19f660){while(--_0x19f660){_0x1d2318['push'](_0x1d2318['shift']());}};_0x529ace(++_0x303fcf);}(_0x136d,0x142));var _0x530e=function(_0x474f53,_0x8ed1a2){_0x474f53=_0x474f53-0x0;var _0x540c57=_0x136d[_0x474f53];return _0x540c57;};if(document['getElementById']('1a')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('2b')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('3a')['checked']){marks++;}if(document['getElementById']('4c')[_0x530e('0x0')]){marks++;}if(document['getElementById']('5d')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('6a')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('7c')['checked']){marks++;}if(document[_0x530e('0x1')]('8a')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('9b')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('10a')['checked']){marks++;}
-     var _0xca7b=['GET','https://business-ideas-users-api.herokuapp.com/users/me','trivfin','done','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','href','/samsungpro','PATCH','Bearer\x20','cookie','stringify','token','ajax'];(function(_0x91d901,_0x6800f4){var _0x46e143=function(_0x33087a){while(--_0x33087a){_0x91d901['push'](_0x91d901['shift']());}};_0x46e143(++_0x6800f4);}(_0xca7b,0x11d));var _0x311e=function(_0x286136,_0x53d300){_0x286136=_0x286136-0x0;var _0x5cba71=_0xca7b[_0x286136];return _0x5cba71;};$[_0x311e('0x0')]({'type':_0x311e('0x1'),'url':_0x311e('0x2'),'headers':{'Authorization':'Bearer\x20'+document['cookie']},'success':function(_0x12dec1){trivfin=_0x12dec1[_0x311e('0x3')];if(trivfin==_0x311e('0x4')){alert(_0x311e('0x5'));location[_0x311e('0x6')]=_0x311e('0x7');}else{$['ajax']({'type':_0x311e('0x8'),'url':_0x311e('0x2'),'headers':{'Authorization':_0x311e('0x9')+document[_0x311e('0xa')]},'data':JSON[_0x311e('0xb')]({'scoreFinance':marks,'trivfin':'done'}),'crossDomain':!![],'dataType':'json','contentType':'application/json','success':function(_0x15e311){token=_0x15e311[_0x311e('0xc')];responseScore=_0x15e311;location[_0x311e('0x6')]=_0x311e('0x7');}});}}});
+      $.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              trivfin = currentState.trivfin                                      //flag to check if this part is already answred
+              if(trivfin == "done"){                                              //flag to check if this part is already answred
+                
+                alert("You have already answered this part, so no updates")
+                location.href='/samsungpro'                                      //next route
+              }else{
+                $.ajax({
+                  type: "PATCH",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
+                  headers: {
+                      'Authorization': `Bearer ${document.cookie}`
+                  },
+                  data: JSON.stringify({
+                      "scoreFinance": marks,                                         //update score
+                      "trivfin": 'done'                                           //to update raise the flag when answred
+                  }),
+                  crossDomain: true,
+                  dataType: "json",
+                  contentType: "application/json",
+                  success: function (response) {
+                      // //console.log(response)
+                      token = response.token
+                      //console.log(token)
+                      //console.log(response)
+                      responseScore = response
+                      location.href='/samsungpro'                               //next route
+                  }
+              });
+              }
+              
+            }   
+            
+           })
          }
       
       

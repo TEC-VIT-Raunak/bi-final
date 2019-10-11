@@ -204,7 +204,44 @@ IOC had been importing oil from Saudi Arabia for almost six years when they foun
     var marks = 0
     function next(){
     var _0x7867=['getElementById','10a','checked'];(function(_0x46add0,_0x36cc48){var _0x16dc64=function(_0xfc20fc){while(--_0xfc20fc){_0x46add0['push'](_0x46add0['shift']());}};_0x16dc64(++_0x36cc48);}(_0x7867,0x1c4));var _0x1fa6=function(_0x164533,_0x240890){_0x164533=_0x164533-0x0;var _0x210234=_0x7867[_0x164533];return _0x210234;};if(document['getElementById']('1a')[_0x1fa6('0x0')]){marks++;}if(document[_0x1fa6('0x1')]('2a')[_0x1fa6('0x0')]){marks++;}if(document[_0x1fa6('0x1')]('3a')['checked']){marks++;}if(document[_0x1fa6('0x1')]('4c')['checked']){marks++;}if(document[_0x1fa6('0x1')]('5d')['checked']){marks++;}if(document['getElementById']('6a')[_0x1fa6('0x0')]){marks++;}if(document['getElementById']('7a')[_0x1fa6('0x0')]){marks++;}if(document[_0x1fa6('0x1')]('8a')[_0x1fa6('0x0')]){marks++;}if(document['getElementById']('9b')[_0x1fa6('0x0')]){marks++;}if(document[_0x1fa6('0x1')](_0x1fa6('0x2'))[_0x1fa6('0x0')]){marks++;}
-     var _0x3719=['application/json','token','href','ajax','GET','https://business-ideas-users-api.herokuapp.com/users/me','Bearer\x20','cookie','trivsal','done','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','/indianoilfin','PATCH','stringify','json'];(function(_0x30e941,_0x198680){var _0x580db4=function(_0x551d08){while(--_0x551d08){_0x30e941['push'](_0x30e941['shift']());}};_0x580db4(++_0x198680);}(_0x3719,0x12f));var _0x2c0c=function(_0x11a1be,_0x209796){_0x11a1be=_0x11a1be-0x0;var _0x236f60=_0x3719[_0x11a1be];return _0x236f60;};$[_0x2c0c('0x0')]({'type':_0x2c0c('0x1'),'url':_0x2c0c('0x2'),'headers':{'Authorization':_0x2c0c('0x3')+document[_0x2c0c('0x4')]},'success':function(_0x57e3e8){trivsal=_0x57e3e8[_0x2c0c('0x5')];if(trivsal==_0x2c0c('0x6')){alert(_0x2c0c('0x7'));location['href']=_0x2c0c('0x8');}else{$[_0x2c0c('0x0')]({'type':_0x2c0c('0x9'),'url':_0x2c0c('0x2'),'headers':{'Authorization':_0x2c0c('0x3')+document[_0x2c0c('0x4')]},'data':JSON[_0x2c0c('0xa')]({'scoreSales':marks,'trivsal':_0x2c0c('0x6')}),'crossDomain':!![],'dataType':_0x2c0c('0xb'),'contentType':_0x2c0c('0xc'),'success':function(_0xca0cb){token=_0xca0cb[_0x2c0c('0xd')];responseScore=_0xca0cb;location[_0x2c0c('0xe')]=_0x2c0c('0x8');}});}}});
+      $.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              trivsal = currentState.trivsal                                      //flag to check if this part is already answred
+              if(trivsal == "done"){                                              //flag to check if this part is already answred
+                
+                alert("You have already answered this part, so no updates")
+                location.href='/indianoilfin'                                      //next route
+              }else{
+                $.ajax({
+                  type: "PATCH",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
+                  headers: {
+                      'Authorization': `Bearer ${document.cookie}`
+                  },
+                  data: JSON.stringify({
+                      "scoreSales": marks,                                         //update score
+                      "trivsal": 'done'                                           //to update raise the flag when answred
+                  }),
+                  crossDomain: true,
+                  dataType: "json",
+                  contentType: "application/json",
+                  success: function (response) {
+                      // //console.log(response)
+                      token = response.token
+                      //console.log(token)
+                      //console.log(response)
+                      responseScore = response
+                      location.href='/indianoilfin'                               //next route
+                  }
+              });
+              }
+              
+            }   
+            
+           })
          }
       
       

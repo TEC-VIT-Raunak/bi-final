@@ -1,1 +1,188 @@
-var _0x28d2=['Bearer\x20','cookie','weightSal','weightRes','weightFin','weightPro','parse','user','_id','pair','firestore','getElementById','sal_inv','value','collection','merger_block','doc','then','data','score1','sal_merge_val','innerHTML','set','users','get','sales_scoredb','sales','catch','pro_inv','score2','pro_merge_val','production_scoredb','log','production','fin_inv','score3','fin_merge_val','finance_scoredb','finance','res_inv','research_scoredb','research','res_merge_val','score4','ajax','GET','https://business-ideas-users-api.herokuapp.com/users/me'];(function(_0x2f3e31,_0x3a89c9){var _0x2c6db2=function(_0x1fa352){while(--_0x1fa352){_0x2f3e31['push'](_0x2f3e31['shift']());}};_0x2c6db2(++_0x3a89c9);}(_0x28d2,0x1ad));var _0x4022=function(_0x3d8799,_0x4461dc){_0x3d8799=_0x3d8799-0x0;var _0x445ac1=_0x28d2[_0x3d8799];return _0x445ac1;};user=JSON[_0x4022('0x0')](localStorage['user']);var uid=user[_0x4022('0x1')][_0x4022('0x2')];var pair=user[_0x4022('0x1')][_0x4022('0x3')];var db=firebase[_0x4022('0x4')]();var sales_score=0x0;var finance_score=0x0;var production_score=0x0;var research_score=0x0;var weightSal;var weightPro;var weightFin;var weightRes;function sal_invf(){sal_inv=document[_0x4022('0x5')](_0x4022('0x6'))[_0x4022('0x7')];if(sal_inv>0x0){var _0x48f371=db[_0x4022('0x8')](_0x4022('0x9'))[_0x4022('0xa')](pair);_0x48f371['get']()[_0x4022('0xb')](_0x5232fd=>{pair_val=_0x5232fd[_0x4022('0xc')]();current_score=pair_val[_0x4022('0xd')];pair_val={...pair_val,'score1':parseFloat(current_score)+parseFloat(sal_inv)*weightSal};document['getElementById'](_0x4022('0xe'))[_0x4022('0xf')]=pair_val[_0x4022('0xd')];_0x48f371[_0x4022('0x10')](pair_val)[_0x4022('0xb')](()=>{var _0x45206e=db[_0x4022('0x8')](_0x4022('0x11'))[_0x4022('0xa')](uid);_0x45206e[_0x4022('0x12')]()['then'](_0x35ccbe=>{user_data=_0x35ccbe[_0x4022('0xc')]();sales_score=user_data[_0x4022('0x13')];var _0x54a62a=sales_score-sal_inv;user_data={...user_data,'sales_scoredb':_0x54a62a};document[_0x4022('0x5')](_0x4022('0x14'))[_0x4022('0xf')]=_0x54a62a;_0x45206e[_0x4022('0x10')](user_data)[_0x4022('0xb')](()=>{})[_0x4022('0x15')](_0x15c0af=>console['log'](_0x15c0af));});});});}}function pro_invf(){pro_inv=document['getElementById'](_0x4022('0x16'))[_0x4022('0x7')];if(pro_inv>0x0){var _0x555020=db[_0x4022('0x8')](_0x4022('0x9'))[_0x4022('0xa')](pair);_0x555020['get']()[_0x4022('0xb')](_0x360da2=>{pair_val=_0x360da2[_0x4022('0xc')]();current_score=pair_val[_0x4022('0x17')];pair_val={...pair_val,'score2':parseFloat(current_score)+parseFloat(pro_inv)*weightPro};document[_0x4022('0x5')](_0x4022('0x18'))[_0x4022('0xf')]=pair_val['score2'];_0x555020[_0x4022('0x10')](pair_val)[_0x4022('0xb')](()=>{var _0xa61048=db[_0x4022('0x8')](_0x4022('0x11'))[_0x4022('0xa')](uid);_0xa61048['get']()[_0x4022('0xb')](_0x1dce85=>{user_data=_0x1dce85[_0x4022('0xc')]();var _0x5afd50=user_data[_0x4022('0x19')]-pro_inv;user_data={...user_data,'production_scoredb':_0x5afd50};console[_0x4022('0x1a')](user_data);document[_0x4022('0x5')](_0x4022('0x1b'))[_0x4022('0xf')]=_0x5afd50;_0xa61048[_0x4022('0x10')](user_data)[_0x4022('0xb')](()=>{});});});});}}function fin_invf(){fin_inv=document['getElementById'](_0x4022('0x1c'))[_0x4022('0x7')];if(fin_inv>0x0){var _0xb5227c=db[_0x4022('0x8')](_0x4022('0x9'))[_0x4022('0xa')](pair);_0xb5227c[_0x4022('0x12')]()[_0x4022('0xb')](_0x3473a8=>{pair_val=_0x3473a8[_0x4022('0xc')]();current_score=pair_val[_0x4022('0x1d')];pair_val={...pair_val,'score3':parseFloat(current_score)+parseFloat(fin_inv)*weightFin};document[_0x4022('0x5')](_0x4022('0x1e'))[_0x4022('0xf')]=pair_val[_0x4022('0x1d')];_0xb5227c[_0x4022('0x10')](pair_val)[_0x4022('0xb')](()=>{var _0x359861=db[_0x4022('0x8')](_0x4022('0x11'))[_0x4022('0xa')](uid);_0x359861[_0x4022('0x12')]()[_0x4022('0xb')](_0xd53c26=>{user_data=_0xd53c26[_0x4022('0xc')]();finance_score=user_data[_0x4022('0x1f')];var _0x398091=finance_score-fin_inv;user_data={...user_data,'finance_scoredb':_0x398091};console[_0x4022('0x1a')](user_data);document[_0x4022('0x5')](_0x4022('0x20'))[_0x4022('0xf')]=_0x398091;_0x359861[_0x4022('0x10')](user_data)['then'](()=>{});});});});}}function res_invf(){res_inv=document[_0x4022('0x5')](_0x4022('0x21'))[_0x4022('0x7')];if(res_inv>0x0){var _0x18da50=db[_0x4022('0x8')](_0x4022('0x9'))[_0x4022('0xa')](pair);_0x18da50[_0x4022('0x12')]()[_0x4022('0xb')](_0x23bb85=>{pair_val=_0x23bb85[_0x4022('0xc')]();current_score=pair_val['score4'];pair_val={...pair_val,'score4':parseFloat(current_score)+parseFloat(res_inv)*weightRes};document[_0x4022('0x5')]('res_merge_val')[_0x4022('0xf')]=pair_val['score4'];_0x18da50[_0x4022('0x10')](pair_val)[_0x4022('0xb')](()=>{var _0x23ba70=db[_0x4022('0x8')](_0x4022('0x11'))[_0x4022('0xa')](uid);_0x23ba70['get']()[_0x4022('0xb')](_0xabd203=>{user_data=_0xabd203[_0x4022('0xc')]();research_score=user_data[_0x4022('0x22')];var _0x5ec91f=research_score-res_inv;user_data={...user_data,'research_scoredb':_0x5ec91f};document[_0x4022('0x5')]('research')[_0x4022('0xf')]=_0x5ec91f;_0x23ba70[_0x4022('0x10')](user_data)[_0x4022('0xb')](()=>{});});});});}}var docRef=db[_0x4022('0x8')](_0x4022('0x11'))['doc'](uid);docRef[_0x4022('0x12')]()[_0x4022('0xb')](_0x1c7d61=>{user=_0x1c7d61['data']();sales_score=user['sales_scoredb'];finance_score=user[_0x4022('0x1f')];production_score=user[_0x4022('0x19')];research_score=user[_0x4022('0x22')];document['getElementById'](_0x4022('0x14'))[_0x4022('0xf')]=sales_score;document[_0x4022('0x5')](_0x4022('0x1b'))[_0x4022('0xf')]=production_score;document[_0x4022('0x5')](_0x4022('0x23'))[_0x4022('0xf')]=research_score;document[_0x4022('0x5')](_0x4022('0x20'))[_0x4022('0xf')]=finance_score;});var pairDocRef=db[_0x4022('0x8')](_0x4022('0x9'))['doc'](pair);pairDocRef['get']()[_0x4022('0xb')](_0x5a5e62=>{pairDoc=_0x5a5e62['data']();document[_0x4022('0x5')](_0x4022('0xe'))[_0x4022('0xf')]=pairDoc[_0x4022('0xd')];document[_0x4022('0x5')](_0x4022('0x18'))[_0x4022('0xf')]=pairDoc[_0x4022('0x17')];document['getElementById'](_0x4022('0x24'))['innerHTML']=pairDoc['score4'];document[_0x4022('0x5')](_0x4022('0x1e'))[_0x4022('0xf')]=pairDoc['score3'];});db[_0x4022('0x8')](_0x4022('0x9'))[_0x4022('0xa')](pair)['onSnapshot'](function(_0x286e7a){mergeDocData=_0x286e7a['data']();document[_0x4022('0x5')](_0x4022('0xe'))[_0x4022('0xf')]=mergeDocData[_0x4022('0xd')];document['getElementById'](_0x4022('0x18'))[_0x4022('0xf')]=mergeDocData[_0x4022('0x17')];document[_0x4022('0x5')]('res_merge_val')[_0x4022('0xf')]=mergeDocData[_0x4022('0x25')];document[_0x4022('0x5')](_0x4022('0x1e'))[_0x4022('0xf')]=mergeDocData[_0x4022('0x1d')];});$[_0x4022('0x26')]({'type':_0x4022('0x27'),'url':_0x4022('0x28'),'headers':{'Authorization':_0x4022('0x29')+document[_0x4022('0x2a')]},'success':function(_0x98a920){weightSal=_0x98a920[_0x4022('0x2b')]/0xa;weightFin=_0x98a920['weightFin']/0xa;weightPro=_0x98a920[_0x4022('0x2b')]/0xa;weightRes=_0x98a920[_0x4022('0x2c')]/0xa;document[_0x4022('0x5')]('weightRes')[_0x4022('0xf')]=_0x98a920[_0x4022('0x2c')]/0xa;document[_0x4022('0x5')](_0x4022('0x2d'))[_0x4022('0xf')]=_0x98a920[_0x4022('0x2d')]/0xa;document[_0x4022('0x5')](_0x4022('0x2b'))[_0x4022('0xf')]=_0x98a920['weightSal']/0xa;document[_0x4022('0x5')](_0x4022('0x2e'))[_0x4022('0xf')]=_0x98a920[_0x4022('0x2b')]/0xa;}});
+user = JSON.parse(localStorage.user)
+
+var uid = user.user._id
+var pair = user.user.pair
+var db = firebase.firestore();
+var sales_score = 0
+var finance_score = 0
+var production_score = 0
+var research_score = 0
+var weightSal
+var weightPro
+var weightFin
+var weightRes
+// $.ajax({
+//     type:'GET',
+//     url:'https://business-ideas-users-api.herokuapp.com/users/me',
+//     headers: {'Authorization': `Bearer ${document.cookie}`},
+//    success:function(data){
+//     uid = data._id
+//     pair = data.pair
+    	
+//    }
+//  });
+
+function sal_invf(){
+	sal_inv = document.getElementById('sal_inv').value;
+	if(sal_inv>0){
+	// console.log(sal_inv)
+	var docRef = db.collection("merger_block").doc(pair)
+	docRef.get().then((doc)=>{
+		pair_val=doc.data()
+		current_score = pair_val.score1
+		pair_val = {...pair_val,score1: (parseFloat(current_score)+parseFloat(sal_inv) * weightSal)}
+		document.getElementById("sal_merge_val").innerHTML = pair_val.score1
+		docRef.set(pair_val).then(()=>{
+			var userDoc = db.collection("users").doc(uid)
+			userDoc.get().then((snaped)=>{
+				user_data = snaped.data()
+				sales_score = user_data.sales_scoredb
+				var updated_score = sales_score - sal_inv
+				user_data = {...user_data,sales_scoredb:updated_score}
+				document.getElementById("sales").innerHTML = updated_score
+				userDoc.set(user_data).then(()=>{
+					// document.getElementById("sal_inv").value = NaN
+				}).catch((err)=>console.log(err))
+			})
+		})
+		
+	})
+	}
+}
+
+
+function pro_invf(){
+	pro_inv = document.getElementById('pro_inv').value;
+	if(pro_inv>0){
+	// console.log(pro_inv)
+	var docRef = db.collection("merger_block").doc(pair)
+	docRef.get().then((doc)=>{
+		pair_val=doc.data()
+		current_score = pair_val.score2
+		pair_val = {...pair_val,score2: (parseFloat(current_score)+parseFloat(pro_inv)*weightPro)}
+		document.getElementById("pro_merge_val").innerHTML = pair_val.score2
+		docRef.set(pair_val).then(()=>{
+			var userDoc = db.collection("users").doc(uid)
+			userDoc.get().then((snaped)=>{
+				user_data = snaped.data()
+				// production_score = user_data.production_scoredb
+				var updated_score = user_data.production_scoredb - pro_inv
+				user_data = {...user_data,production_scoredb:updated_score}
+				console.log(user_data)
+				document.getElementById("production").innerHTML = updated_score
+				userDoc.set(user_data).then(()=>{
+					// document.getElementById("pro_inv").value = NaN
+				})
+			})
+		})
+		
+	})
+}
+}
+
+
+function fin_invf(){
+	fin_inv = document.getElementById('fin_inv').value;
+	if(fin_inv>0){	
+	// console.log(fin_inv)
+	var docRef = db.collection("merger_block").doc(pair)
+	docRef.get().then((doc)=>{
+		pair_val=doc.data()
+		current_score = pair_val.score3
+		pair_val = {...pair_val,score3: (parseFloat(current_score)+parseFloat(fin_inv)*weightFin)}
+		document.getElementById("fin_merge_val").innerHTML = pair_val.score3
+		docRef.set(pair_val).then(()=>{
+			var userDoc = db.collection("users").doc(uid)
+			userDoc.get().then((snaped)=>{
+				user_data = snaped.data()
+				finance_score = user_data.finance_scoredb
+				var updated_score = finance_score - fin_inv
+				user_data = {...user_data,finance_scoredb:updated_score}
+				console.log(user_data)
+				document.getElementById("finance").innerHTML = updated_score
+				userDoc.set(user_data).then(()=>{
+					// document.getElementById("fin_inv").value = NaN
+				})
+			})
+		})
+		
+	})
+}
+}
+
+function res_invf(){
+	res_inv = document.getElementById('res_inv').value;
+	if(res_inv>0){	
+	// console.log(res_inv)
+	var docRef = db.collection("merger_block").doc(pair)
+	docRef.get().then((doc)=>{
+		pair_val=doc.data()
+		current_score = pair_val.score4
+		pair_val = {...pair_val,score4: (parseFloat(current_score)+parseFloat(res_inv)*weightRes)}
+		document.getElementById("res_merge_val").innerHTML = pair_val.score4
+		docRef.set(pair_val).then(()=>{
+			var userDoc = db.collection("users").doc(uid)
+			userDoc.get().then((snaped)=>{
+				user_data = snaped.data()
+				research_score = user_data.research_scoredb
+				var updated_score = research_score - res_inv
+				user_data = {...user_data,research_scoredb:updated_score}
+				document.getElementById("research").innerHTML = updated_score
+				userDoc.set(user_data).then(()=>{
+					// document.getElementById("res_inv").value = NaN
+				})
+			})
+		})
+		
+	})
+}
+}
+
+var docRef = db.collection("users").doc(uid)
+	docRef.get().then((doc)=>{
+		user=doc.data()
+		sales_score = user.sales_scoredb
+		finance_score = user.finance_scoredb
+		production_score = user.production_scoredb
+		research_score = user.research_scoredb
+		document.getElementById("sales").innerHTML = sales_score
+		document.getElementById("production").innerHTML = production_score
+		document.getElementById("research").innerHTML = research_score
+		document.getElementById("finance").innerHTML = finance_score	
+	})
+var pairDocRef = db.collection("merger_block").doc(pair)
+pairDocRef.get().then((doc1)=>{
+	pairDoc=doc1.data()
+	document.getElementById("sal_merge_val").innerHTML = pairDoc.score1
+	document.getElementById("pro_merge_val").innerHTML = pairDoc.score2
+	document.getElementById("res_merge_val").innerHTML = pairDoc.score4
+	document.getElementById("fin_merge_val").innerHTML = pairDoc.score3	
+	
+})
+
+
+
+db.collection("merger_block").doc(pair)
+	.onSnapshot(function(doc) {
+    mergeDocData = doc.data()
+    document.getElementById("sal_merge_val").innerHTML = mergeDocData.score1
+	document.getElementById("pro_merge_val").innerHTML = mergeDocData.score2
+	document.getElementById("res_merge_val").innerHTML = mergeDocData.score4
+	document.getElementById("fin_merge_val").innerHTML = mergeDocData.score3
+});
+
+$.ajax({
+        type:'GET',
+        url:'https://business-ideas-users-api.herokuapp.com/users/me',
+        headers: {'Authorization': `Bearer ${document.cookie}`},
+       success:function(data){
+       	weightSal = data.weightSal/10
+       	weightFin = data.weightFin/10
+       	weightPro = data.weightSal/10
+       	weightRes = data.weightRes/10
+       	document.getElementById("weightRes").innerHTML = data.weightRes/10
+       	document.getElementById("weightFin").innerHTML = data.weightFin/10
+       	document.getElementById("weightSal").innerHTML = data.weightSal/10
+       	document.getElementById("weightPro").innerHTML = data.weightSal/10 
+       }
+   })

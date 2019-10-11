@@ -69,11 +69,32 @@
 <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
 <script>
   // Your web app's Firebase configuration
- var _0x52f0=['business-ideas-134d4.appspot.com','504116260995','AIzaSyA7CVZe8_ga4PuOAtrrnheh9J43uDNkyD8','https://business-ideas-134d4.firebaseio.com'];(function(_0x26eeed,_0x322ab2){var _0x4ae062=function(_0x21810a){while(--_0x21810a){_0x26eeed['push'](_0x26eeed['shift']());}};_0x4ae062(++_0x322ab2);}(_0x52f0,0x1aa));var _0x34f5=function(_0x2155e4,_0x3c130d){_0x2155e4=_0x2155e4-0x0;var _0x55769a=_0x52f0[_0x2155e4];return _0x55769a;};var firebaseConfig={'apiKey':_0x34f5('0x0'),'authDomain':'business-ideas-134d4.firebaseapp.com','databaseURL':_0x34f5('0x1'),'projectId':'business-ideas-134d4','storageBucket':_0x34f5('0x2'),'messagingSenderId':_0x34f5('0x3'),'appId':'1:504116260995:web:8305df7ccbf0b52f'};
+  var firebaseConfig = {
+    apiKey: "AIzaSyA7CVZe8_ga4PuOAtrrnheh9J43uDNkyD8",
+    authDomain: "business-ideas-134d4.firebaseapp.com",
+    databaseURL: "https://business-ideas-134d4.firebaseio.com",
+    projectId: "business-ideas-134d4",
+    storageBucket: "business-ideas-134d4.appspot.com",
+    messagingSenderId: "504116260995",
+    appId: "1:504116260995:web:8305df7ccbf0b52f"
+  };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   letsmerge=()=>{
-   var _0x3227=['https://business-ideas-users-api.herokuapp.com/users/me','cookie','flag2','Wait\x20for\x20it!','href','/merger'];(function(_0x346aa6,_0x28e77a){var _0x16c8e6=function(_0x1228ed){while(--_0x1228ed){_0x346aa6['push'](_0x346aa6['shift']());}};_0x16c8e6(++_0x28e77a);}(_0x3227,0xea));var _0x51db=function(_0x3fee62,_0x9d72fe){_0x3fee62=_0x3fee62-0x0;var _0x484ed3=_0x3227[_0x3fee62];return _0x484ed3;};$['ajax']({'type':'GET','url':_0x51db('0x0'),'headers':{'Authorization':'Bearer\x20'+document[_0x51db('0x1')]},'success':function(_0x256a5f){flag2=_0x256a5f[_0x51db('0x2')];if(flag2!='r2begin'){alert(_0x51db('0x3'));}else{location[_0x51db('0x4')]=_0x51db('0x5');}}});
+    $.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              flag2 = currentState.flag2
+              if(flag2 !='r2begin'){
+                alert("Wait for it!")
+              }
+              else{
+                location.href = '/merger'
+              }
+            }
+          })
   }
 </script>
 <script type="text/javascript" src="js/scoreboard.js"></script>

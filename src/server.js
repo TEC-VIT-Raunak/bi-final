@@ -119,3 +119,7 @@ app.get('/info', (req, res) => {
     res.render('description')
     
 })
+app.get('/rules', (req, res) => {
+    res.render('rule')
+    
+})

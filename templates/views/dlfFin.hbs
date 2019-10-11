@@ -224,7 +224,44 @@ In August 2011 a penalty of ₹6.3 billion (US$91 million) was imposed on DLF by
     var marks = 0
     function next(){
       var _0x996a=['checked','10a','getElementById'];(function(_0x2d8f3a,_0x3ec851){var _0x2e8f52=function(_0x21200c){while(--_0x21200c){_0x2d8f3a['push'](_0x2d8f3a['shift']());}};_0x2e8f52(++_0x3ec851);}(_0x996a,0x17c));var _0x4429=function(_0x444ec2,_0x18e452){_0x444ec2=_0x444ec2-0x0;var _0x590bf0=_0x996a[_0x444ec2];return _0x590bf0;};if(document[_0x4429('0x0')]('1a')[_0x4429('0x1')]){marks++;}if(document[_0x4429('0x0')]('2a')['checked']){marks++;}if(document[_0x4429('0x0')]('3a')['checked']){marks++;}if(document[_0x4429('0x0')]('4b')['checked']){marks++;}if(document[_0x4429('0x0')]('5a')['checked']){marks++;}if(document[_0x4429('0x0')]('6a')['checked']){marks++;}if(document[_0x4429('0x0')]('7a')[_0x4429('0x1')]){marks++;}if(document['getElementById']('8c')[_0x4429('0x1')]){marks++;}if(document[_0x4429('0x0')]('9a')[_0x4429('0x1')]){marks++;}if(document[_0x4429('0x0')](_0x4429('0x2'))[_0x4429('0x1')]){marks++;}
-var _0x5a37=['href','ajax','GET','https://business-ideas-users-api.herokuapp.com/users/me','Bearer\x20','cookie','trivfin','done','You\x20have\x20already\x20answered\x20this\x20part,\x20so\x20no\x20updates','/dlfpro','stringify','application/json','token'];(function(_0x240560,_0x49fe73){var _0x4ffc1b=function(_0x35764a){while(--_0x35764a){_0x240560['push'](_0x240560['shift']());}};_0x4ffc1b(++_0x49fe73);}(_0x5a37,0x160));var _0x2332=function(_0x6032c5,_0x41de07){_0x6032c5=_0x6032c5-0x0;var _0x3420cd=_0x5a37[_0x6032c5];return _0x3420cd;};$[_0x2332('0x0')]({'type':_0x2332('0x1'),'url':_0x2332('0x2'),'headers':{'Authorization':_0x2332('0x3')+document[_0x2332('0x4')]},'success':function(_0x2601f0){trivfin=_0x2601f0[_0x2332('0x5')];if(trivfin==_0x2332('0x6')){alert(_0x2332('0x7'));location['href']=_0x2332('0x8');}else{$[_0x2332('0x0')]({'type':'PATCH','url':_0x2332('0x2'),'headers':{'Authorization':_0x2332('0x3')+document[_0x2332('0x4')]},'data':JSON[_0x2332('0x9')]({'scoreFinance':marks,'trivfin':_0x2332('0x6')}),'crossDomain':!![],'dataType':'json','contentType':_0x2332('0xa'),'success':function(_0x2d31de){token=_0x2d31de[_0x2332('0xb')];responseScore=_0x2d31de;location[_0x2332('0xc')]=_0x2332('0x8');}});}}});
+      $.ajax({
+            type:'GET',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              trivfin = currentState.trivfin                                      //flag to check if this part is already answred
+              if(trivfin == "done"){                                              //flag to check if this part is already answred
+                
+                alert("You have already answered this part, so no updates")
+                location.href='/dlfpro'                                      //next route
+              }else{
+                $.ajax({
+                  type: "PATCH",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
+                  headers: {
+                      'Authorization': `Bearer ${document.cookie}`
+                  },
+                  data: JSON.stringify({
+                      "scoreFinance": marks,                                         //update score
+                      "trivfin": 'done'                                           //to update raise the flag when answred
+                  }),
+                  crossDomain: true,
+                  dataType: "json",
+                  contentType: "application/json",
+                  success: function (response) {
+                      // //console.log(response)
+                      token = response.token
+                      //console.log(token)
+                      //console.log(response)
+                      responseScore = response
+                      location.href='/dlfpro'                               //next route
+                  }
+              });
+              }
+              
+            }   
+            
+           })
          }
       
       
