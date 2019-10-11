@@ -39,7 +39,7 @@ function sal_invf(){
 				document.getElementById("sales").innerHTML = updated_score
 				userDoc.set(user_data).then(()=>{
 					document.getElementById("sal_inv").value = NaN
-				}).catch((err)=>//console.log(err))
+				}).catch((err)=>console.log(err))
 			})
 		})
 		
