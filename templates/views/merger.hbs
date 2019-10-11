@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Business ideas</title>
+</head>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+<!-- <div class="ui raised very padded text container segment"> -->
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<style type="text/css">
+  .container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  body{
+    /*background-image: url(images/bg-img2.jpg);*/
+    background-size: cover;
+  }
+  th{
+   
+  }
+</style>
+<body>
+
+
+
+<div class="container">
+
+<table class="ui purple table">
+  <thead>
+    <tr>
+      <th>Verticals</th>
+      <th>Current score</th>
+      <th>Weightage</th>
+      <th>Investment amount</th>
+      <th>Merger value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sales</td>
+      <td><span id='sales'><img src="images/805.gif" width="20px" height="20px"></span></td>
+      <td id="weightSal"><span id='sales'><img src="images/805.gif" width="20px" height="20px"></td>
+      <td><div class="ui input"><input id="sal_inv" type="number" name="sales"></div>
+    <button onclick="sal_invf()" class="ui inverted purple button">Invest</button></td>
+      <td><span id="sal_merge_val"><img src="images/805.gif" width="20px" height="20px"></span></td>
+    </tr>
+    <tr>
+      <td>Production</td>
+      <td><span id='production'><img src="images/805.gif" width="20px" height="20px"></span><br></td>
+      <td id="weightPro"><span id='sales'><img src="images/805.gif" width="20px" height="20px"></td>
+      <td><div class="ui input"><input id="pro_inv" type="number" name="sales"></div>
+    <button onclick="pro_invf()" class="ui inverted purple button">Invest</button></td>
+      <td><span id="pro_merge_val"><img src="images/805.gif" width="20px" height="20px"></span></td>
+    </tr>
+    <tr>
+      <td>Research</td>
+      <td><span id='research'><img src="images/805.gif" width="20px" height="20px"></span><br></td>
+      <td id="weightRes"><span id='sales'><img src="images/805.gif" width="20px" height="20px"></td>
+      <td><div class="ui input"><input id="res_inv" type="number" name="sales"></div>
+    <button onclick="res_invf()" class="ui inverted purple button">Invest</button></td>
+      <td><span id="res_merge_val"><img src="images/805.gif" width="20px" height="20px"></span></td>
+    </tr>
+    <tr>
+      <td>Finance</td>
+      <td><span id='finance'><img src="images/805.gif" width="20px" height="20px"></span></td>
+      <td id="weightFin"><span id='sales'><img src="images/805.gif" width="20px" height="20px"></td>
+      <td><div class="ui input"><input id="fin_inv" type="number" name="sales"></div>
+    <button onclick="fin_invf()" class="ui inverted purple button">Invest</button></td>
+      <td><span id="fin_merge_val"><img src="images/805.gif" width="20px" height="20px"></span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<div class="sty1"></div>
+<div class="sty3"></div>
+<div class="sty4"></div>
+<div class="sty6"></div>
+
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA7CVZe8_ga4PuOAtrrnheh9J43uDNkyD8",
+    authDomain: "business-ideas-134d4.firebaseapp.com",
+    databaseURL: "https://business-ideas-134d4.firebaseio.com",
+    projectId: "business-ideas-134d4",
+    storageBucket: "business-ideas-134d4.appspot.com",
+    messagingSenderId: "504116260995",
+    appId: "1:504116260995:web:8305df7ccbf0b52f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script type="text/javascript" src="js/merger.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+</html>

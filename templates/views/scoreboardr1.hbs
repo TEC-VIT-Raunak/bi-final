@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Business ideas</title>
+</head>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+<!-- <div class="ui raised very padded text container segment"> -->
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<style type="text/css">
+  .container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  body{
+    /*background-image: url(images/bg-img2.jpg);*/
+    background-size: cover;
+}
+</style>
+<body>
+
+
+
+<div class="container">
+
+<table class="ui purple compact table">
+  <thead>
+    <tr class="center aligned">
+      <th class="four wide">Verticals</th>
+      <th class="four wide">Current score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="center aligned">
+      <td>Sales</td>
+      <td><span id='sales'><img src="images/805.gif" width="20px" height="20px"></span></td>
+      <!-- <td><div class="ui input"><input id="sal_inv" type="number" name="sales"></div> -->
+    
+    </tr>
+    <tr class="center aligned">
+      <td>Production</td>
+      <td><span id='production'><img src="images/805.gif" width="20px" height="20px"></span><br></td>
+      <!-- <td><div class="ui input"><input id="pro_inv" type="number" name="sales"></div> -->
+ 
+    </tr>
+    <tr class="center aligned">
+      <td>Research</td>
+      <td><span id='research'><img src="images/805.gif" width="20px" height="20px"></span><br></td>
+      <!-- <td><div class="ui input"><input id="res_inv" type="number" name="sales"></div> -->
+    </tr>
+    <tr class="center aligned">
+      <td>Finance</td>
+      <td><span id='finance'><img src="images/805.gif" width="20px" height="20px"></span></td>
+      <!-- <td><div class="ui input"><input id="fin_inv" type="number" name="sales"></div> -->
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<button class="ui right purple labeled icon button" style="position: absolute;bottom: 10%;right: 9%;" onclick="letsmerge()">
+  <i class="right arrow icon"></i>
+  Next
+</button>
+
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA7CVZe8_ga4PuOAtrrnheh9J43uDNkyD8",
+    authDomain: "business-ideas-134d4.firebaseapp.com",
+    databaseURL: "https://business-ideas-134d4.firebaseio.com",
+    projectId: "business-ideas-134d4",
+    storageBucket: "business-ideas-134d4.appspot.com",
+    messagingSenderId: "504116260995",
+    appId: "1:504116260995:web:8305df7ccbf0b52f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  letsmerge=()=>{
+    $.ajax({
+            type:'GET',
+            url:'http://localhost:3000/users/me',
+            headers: {'Authorization': `Bearer ${document.cookie}`},
+            success:function(currentState){
+              flag2 = currentState.flag2
+              if(flag2 !='r2begin'){
+                alert("Wait for it!")
+              }
+              else{
+                location.href = '/merger'
+              }
+            }
+          })
+  }
+</script>
+<script type="text/javascript" src="js/scoreboard.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+</html>
