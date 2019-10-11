@@ -31,7 +31,7 @@ window.onload=()=>{
     answer = user.user.currentQuestion   
     $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
            success:function(data){
             count = data.counter
@@ -111,7 +111,7 @@ const submit = () => {
         
         $.ajax({
             type: "PATCH",
-            url: "http://localhost:3000/users/me",
+            url: "https://business-ideas-users-api.herokuapp.com/users/me",
             headers: {
                 'Authorization': `Bearer ${document.cookie}`
             },
@@ -168,7 +168,7 @@ const submit = () => {
     if(count >= 4){
     	$.ajax({
             type: "PATCH",
-            url: "http://localhost:3000/users/me",
+            url: "https://business-ideas-users-api.herokuapp.com/users/me",
             headers: {
                 'Authorization': `Bearer ${document.cookie}`
             },
@@ -190,7 +190,7 @@ const submit = () => {
         var finance_scoremdb
         $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
            success:function(data){
             uid = data._id

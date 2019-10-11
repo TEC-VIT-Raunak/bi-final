@@ -267,7 +267,7 @@ Unveiled Samsung and HARMAN's '2018 Digital Cockpit'</li>
      var _0x4f7a=['10b','getElementById','checked'];(function(_0xcac58d,_0x3ee6d8){var _0x158743=function(_0x4cf9c5){while(--_0x4cf9c5){_0xcac58d['push'](_0xcac58d['shift']());}};_0x158743(++_0x3ee6d8);}(_0x4f7a,0x8e));var _0x4542=function(_0x4ed527,_0x4b34d1){_0x4ed527=_0x4ed527-0x0;var _0x48bf4f=_0x4f7a[_0x4ed527];return _0x48bf4f;};if(document[_0x4542('0x0')]('1b')[_0x4542('0x1')]){marks++;}if(document[_0x4542('0x0')]('2d')[_0x4542('0x1')]){marks++;}if(document['getElementById']('3b')[_0x4542('0x1')]){marks++;}if(document[_0x4542('0x0')]('4a')[_0x4542('0x1')]){marks++;}if(document[_0x4542('0x0')]('5a')[_0x4542('0x1')]){marks++;}if(document[_0x4542('0x0')]('6c')[_0x4542('0x1')]){marks++;}if(document[_0x4542('0x0')]('7c')[_0x4542('0x1')]){marks++;}if(document[_0x4542('0x0')]('8a')[_0x4542('0x1')]){marks++;}if(document[_0x4542('0x0')]('9d')[_0x4542('0x1')]){marks++;}if(document[_0x4542('0x0')](_0x4542('0x2'))['checked']){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivrnd = currentState.trivrnd                                      //flag to check if this part is already answred
@@ -279,7 +279,7 @@ Unveiled Samsung and HARMAN's '2018 Digital Cockpit'</li>
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

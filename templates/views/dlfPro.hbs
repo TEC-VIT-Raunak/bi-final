@@ -259,7 +259,7 @@ In the year 2002 the company ventured into organized retail complexes. In the ye
      var _0x51b8=['getElementById','checked','10a'];(function(_0xb2768,_0x5d8399){var _0x143e60=function(_0x201bf9){while(--_0x201bf9){_0xb2768['push'](_0xb2768['shift']());}};_0x143e60(++_0x5d8399);}(_0x51b8,0x1cb));var _0x30e9=function(_0x2f3310,_0x58f005){_0x2f3310=_0x2f3310-0x0;var _0x5ae15a=_0x51b8[_0x2f3310];return _0x5ae15a;};if(document[_0x30e9('0x0')]('1b')['checked']){marks++;}if(document[_0x30e9('0x0')]('2c')[_0x30e9('0x1')]){marks++;}if(document['getElementById']('3d')[_0x30e9('0x1')]){marks++;}if(document[_0x30e9('0x0')]('4c')[_0x30e9('0x1')]){marks++;}if(document[_0x30e9('0x0')]('5a')[_0x30e9('0x1')]){marks++;}if(document['getElementById']('6a')[_0x30e9('0x1')]){marks++;}if(document[_0x30e9('0x0')]('7b')['checked']){marks++;}if(document[_0x30e9('0x0')]('8d')[_0x30e9('0x1')]){marks++;}if(document['getElementById']('9a')[_0x30e9('0x1')]){marks++;}if(document[_0x30e9('0x0')](_0x30e9('0x2'))[_0x30e9('0x1')]){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivpro = currentState.trivpro                                      //flag to check if this part is already answred
@@ -270,7 +270,7 @@ In the year 2002 the company ventured into organized retail complexes. In the ye
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

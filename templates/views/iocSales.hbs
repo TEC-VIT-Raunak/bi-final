@@ -206,7 +206,7 @@ IOC had been importing oil from Saudi Arabia for almost six years when they foun
     var _0x7867=['getElementById','10a','checked'];(function(_0x46add0,_0x36cc48){var _0x16dc64=function(_0xfc20fc){while(--_0xfc20fc){_0x46add0['push'](_0x46add0['shift']());}};_0x16dc64(++_0x36cc48);}(_0x7867,0x1c4));var _0x1fa6=function(_0x164533,_0x240890){_0x164533=_0x164533-0x0;var _0x210234=_0x7867[_0x164533];return _0x210234;};if(document['getElementById']('1a')[_0x1fa6('0x0')]){marks++;}if(document[_0x1fa6('0x1')]('2a')[_0x1fa6('0x0')]){marks++;}if(document[_0x1fa6('0x1')]('3a')['checked']){marks++;}if(document[_0x1fa6('0x1')]('4c')['checked']){marks++;}if(document[_0x1fa6('0x1')]('5d')['checked']){marks++;}if(document['getElementById']('6a')[_0x1fa6('0x0')]){marks++;}if(document['getElementById']('7a')[_0x1fa6('0x0')]){marks++;}if(document[_0x1fa6('0x1')]('8a')[_0x1fa6('0x0')]){marks++;}if(document['getElementById']('9b')[_0x1fa6('0x0')]){marks++;}if(document[_0x1fa6('0x1')](_0x1fa6('0x2'))[_0x1fa6('0x0')]){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivsal = currentState.trivsal                                      //flag to check if this part is already answred
@@ -217,7 +217,7 @@ IOC had been importing oil from Saudi Arabia for almost six years when they foun
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

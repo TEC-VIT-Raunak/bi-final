@@ -31,7 +31,7 @@ const submitSend = ()=>{
     // PATCH request not working
     $.ajax({
         type: "PATCH",
-        url: "http://localhost:3000/users/me",
+        url: "https://business-ideas-users-api.herokuapp.com/users/me",
         headers: {
             'Authorization': `Bearer ${document.cookie}`
         },

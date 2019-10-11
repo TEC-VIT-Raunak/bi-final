@@ -39,7 +39,7 @@
     var flag
     $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               flag = currentState.flag

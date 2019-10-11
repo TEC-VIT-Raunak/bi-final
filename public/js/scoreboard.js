@@ -10,7 +10,7 @@ var research_score = 0
 
 // $.ajax({
 //     type:'GET',
-//     url:'http://localhost:3000/users/me',
+//     url:'https://business-ideas-users-api.herokuapp.com/users/me',
 //     headers: {'Authorization': `Bearer ${document.cookie}`},
 //    success:function(data){
 //     uid = data._id

@@ -241,7 +241,7 @@ The company is headed by Kushal Pal Singh. Kushal Pal Singh, according to the Fo
      var _0x1e4f=['getElementById','checked','10a'];(function(_0x5c919e,_0x48c70c){var _0x344629=function(_0x2aa7e9){while(--_0x2aa7e9){_0x5c919e['push'](_0x5c919e['shift']());}};_0x344629(++_0x48c70c);}(_0x1e4f,0x159));var _0x58f7=function(_0x1f1b97,_0x29db6d){_0x1f1b97=_0x1f1b97-0x0;var _0x1f1843=_0x1e4f[_0x1f1b97];return _0x1f1843;};if(document[_0x58f7('0x0')]('1a')[_0x58f7('0x1')]){marks++;}if(document['getElementById']('2a')[_0x58f7('0x1')]){marks++;}if(document[_0x58f7('0x0')]('3a')['checked']){marks++;}if(document['getElementById']('4c')[_0x58f7('0x1')]){marks++;}if(document[_0x58f7('0x0')]('5d')[_0x58f7('0x1')]){marks++;}if(document['getElementById']('6a')[_0x58f7('0x1')]){marks++;}if(document[_0x58f7('0x0')]('7a')['checked']){marks++;}if(document[_0x58f7('0x0')]('8a')[_0x58f7('0x1')]){marks++;}if(document[_0x58f7('0x0')]('9b')[_0x58f7('0x1')]){marks++;}if(document[_0x58f7('0x0')](_0x58f7('0x2'))[_0x58f7('0x1')]){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivsal = currentState.trivsal                                      //flag to check if this part is already answred
@@ -252,7 +252,7 @@ The company is headed by Kushal Pal Singh. Kushal Pal Singh, according to the Fo
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

@@ -235,7 +235,7 @@ The early 2000s were very crucial in the financial timeline of IOC as many impor
      var _0x1052=['getElementById','checked','10a'];(function(_0x3e0590,_0x3dcd43){var _0x321afe=function(_0x1c6542){while(--_0x1c6542){_0x3e0590['push'](_0x3e0590['shift']());}};_0x321afe(++_0x3dcd43);}(_0x1052,0x126));var _0x5f58=function(_0x3552c1,_0x568ae5){_0x3552c1=_0x3552c1-0x0;var _0x5f3808=_0x1052[_0x3552c1];return _0x5f3808;};if(document[_0x5f58('0x0')]('1a')[_0x5f58('0x1')]){marks++;}if(document['getElementById']('2a')[_0x5f58('0x1')]){marks++;}if(document[_0x5f58('0x0')]('3b')['checked']){marks++;}if(document[_0x5f58('0x0')]('4c')[_0x5f58('0x1')]){marks++;}if(document[_0x5f58('0x0')]('5d')['checked']){marks++;}if(document['getElementById']('6b')[_0x5f58('0x1')]){marks++;}if(document[_0x5f58('0x0')]('7a')[_0x5f58('0x1')]){marks++;}if(document[_0x5f58('0x0')]('8a')[_0x5f58('0x1')]){marks++;}if(document[_0x5f58('0x0')]('9a')[_0x5f58('0x1')]){marks++;}if(document[_0x5f58('0x0')](_0x5f58('0x2'))[_0x5f58('0x1')]){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivfin = currentState.trivfin                                      //flag to check if this part is already answred
@@ -246,7 +246,7 @@ The early 2000s were very crucial in the financial timeline of IOC as many impor
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

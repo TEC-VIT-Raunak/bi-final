@@ -209,7 +209,7 @@
      var _0x1e32=['getElementById','checked'];(function(_0x3a8ef3,_0x1a443c){var _0x2636e6=function(_0x35305e){while(--_0x35305e){_0x3a8ef3['push'](_0x3a8ef3['shift']());}};_0x2636e6(++_0x1a443c);}(_0x1e32,0x7b));var _0x4a37=function(_0x2fb655,_0x5a40eb){_0x2fb655=_0x2fb655-0x0;var _0xe6a3a0=_0x1e32[_0x2fb655];return _0xe6a3a0;};if(document['getElementById']('1c')[_0x4a37('0x0')]){marks++;}if(document[_0x4a37('0x1')]('2b')[_0x4a37('0x0')]){marks++;}if(document[_0x4a37('0x1')]('3c')[_0x4a37('0x0')]){marks++;}if(document[_0x4a37('0x1')]('4d')[_0x4a37('0x0')]){marks++;}if(document[_0x4a37('0x1')]('5a')[_0x4a37('0x0')]){marks++;}if(document[_0x4a37('0x1')]('6d')[_0x4a37('0x0')]){marks++;}if(document[_0x4a37('0x1')]('7a')[_0x4a37('0x0')]){marks++;}if(document[_0x4a37('0x1')]('8b')[_0x4a37('0x0')]){marks++;}if(document['getElementById']('9d')[_0x4a37('0x0')]){marks++;}if(document[_0x4a37('0x1')]('10d')['checked']){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivpro = currentState.trivpro                                      //flag to check if this part is already answred
@@ -220,7 +220,7 @@
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

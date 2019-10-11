@@ -228,7 +228,7 @@ We are working towards making life simple by optimising how we use technology, a
       console.log(marks)
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivrnd = currentState.trivrnd                                      //flag to check if this part is already answred
@@ -239,7 +239,7 @@ We are working towards making life simple by optimising how we use technology, a
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },
@@ -270,7 +270,7 @@ We are working towards making life simple by optimising how we use technology, a
     //   var flag = 'true'
     //   $.ajax({
     //         type: "PATCH",
-    //         url: "http://localhost:3000/users/me",
+    //         url: "https://business-ideas-users-api.herokuapp.com/users/me",
     //         headers: {
     //             'Authorization': `Bearer ${document.cookie}`
     //         },

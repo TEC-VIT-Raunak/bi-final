@@ -220,7 +220,7 @@ In 1996, the company suffered hugely in their Revenue growth & operating income.
      var _0x136d=['checked','getElementById'];(function(_0x1d2318,_0x303fcf){var _0x529ace=function(_0x19f660){while(--_0x19f660){_0x1d2318['push'](_0x1d2318['shift']());}};_0x529ace(++_0x303fcf);}(_0x136d,0x142));var _0x530e=function(_0x474f53,_0x8ed1a2){_0x474f53=_0x474f53-0x0;var _0x540c57=_0x136d[_0x474f53];return _0x540c57;};if(document['getElementById']('1a')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('2b')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('3a')['checked']){marks++;}if(document['getElementById']('4c')[_0x530e('0x0')]){marks++;}if(document['getElementById']('5d')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('6a')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('7c')['checked']){marks++;}if(document[_0x530e('0x1')]('8a')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('9b')[_0x530e('0x0')]){marks++;}if(document[_0x530e('0x1')]('10a')['checked']){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivfin = currentState.trivfin                                      //flag to check if this part is already answred
@@ -231,7 +231,7 @@ In 1996, the company suffered hugely in their Revenue growth & operating income.
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

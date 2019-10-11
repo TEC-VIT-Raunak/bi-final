@@ -246,7 +246,7 @@ This investment is part of Ola’s Series J funding round and is in Bansal’s p
      var _0x1c50=['10d','getElementById','checked'];(function(_0x28e534,_0x10d39c){var _0x3d7a7f=function(_0x4f4a73){while(--_0x4f4a73){_0x28e534['push'](_0x28e534['shift']());}};_0x3d7a7f(++_0x10d39c);}(_0x1c50,0xe5));var _0xbf7d=function(_0x1bc9f6,_0x1dbe2d){_0x1bc9f6=_0x1bc9f6-0x0;var _0x2fcc98=_0x1c50[_0x1bc9f6];return _0x2fcc98;};if(document[_0xbf7d('0x0')]('1b')['checked']){marks++;}if(document[_0xbf7d('0x0')]('2b')[_0xbf7d('0x1')]){marks++;}if(document[_0xbf7d('0x0')]('3c')[_0xbf7d('0x1')]){marks++;}if(document['getElementById']('4c')[_0xbf7d('0x1')]){marks++;}if(document[_0xbf7d('0x0')]('5b')['checked']){marks++;}if(document[_0xbf7d('0x0')]('6d')[_0xbf7d('0x1')]){marks++;}if(document[_0xbf7d('0x0')]('7a')['checked']){marks++;}if(document['getElementById']('8c')[_0xbf7d('0x1')]){marks++;}if(document[_0xbf7d('0x0')]('9a')[_0xbf7d('0x1')]){marks++;}if(document['getElementById'](_0xbf7d('0x2'))[_0xbf7d('0x1')]){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivpro = currentState.trivpro                                      //flag to check if this part is already answred
@@ -257,7 +257,7 @@ This investment is part of Ola’s Series J funding round and is in Bansal’s p
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

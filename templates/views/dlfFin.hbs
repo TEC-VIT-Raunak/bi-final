@@ -226,7 +226,7 @@ In August 2011 a penalty of ₹6.3 billion (US$91 million) was imposed on DLF by
       var _0x996a=['checked','10a','getElementById'];(function(_0x2d8f3a,_0x3ec851){var _0x2e8f52=function(_0x21200c){while(--_0x21200c){_0x2d8f3a['push'](_0x2d8f3a['shift']());}};_0x2e8f52(++_0x3ec851);}(_0x996a,0x17c));var _0x4429=function(_0x444ec2,_0x18e452){_0x444ec2=_0x444ec2-0x0;var _0x590bf0=_0x996a[_0x444ec2];return _0x590bf0;};if(document[_0x4429('0x0')]('1a')[_0x4429('0x1')]){marks++;}if(document[_0x4429('0x0')]('2a')['checked']){marks++;}if(document[_0x4429('0x0')]('3a')['checked']){marks++;}if(document[_0x4429('0x0')]('4b')['checked']){marks++;}if(document[_0x4429('0x0')]('5a')['checked']){marks++;}if(document[_0x4429('0x0')]('6a')['checked']){marks++;}if(document[_0x4429('0x0')]('7a')[_0x4429('0x1')]){marks++;}if(document['getElementById']('8c')[_0x4429('0x1')]){marks++;}if(document[_0x4429('0x0')]('9a')[_0x4429('0x1')]){marks++;}if(document[_0x4429('0x0')](_0x4429('0x2'))[_0x4429('0x1')]){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivfin = currentState.trivfin                                      //flag to check if this part is already answred
@@ -237,7 +237,7 @@ In August 2011 a penalty of ₹6.3 billion (US$91 million) was imposed on DLF by
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

@@ -256,7 +256,7 @@ So the company is mainly  working hard to improve hardware of the constructions 
    var _0x432b=['10a','getElementById','checked'];(function(_0x31565c,_0xcf26f0){var _0x49599d=function(_0x42f403){while(--_0x42f403){_0x31565c['push'](_0x31565c['shift']());}};_0x49599d(++_0xcf26f0);}(_0x432b,0xee));var _0x19d5=function(_0x16761d,_0x46d180){_0x16761d=_0x16761d-0x0;var _0x2622e6=_0x432b[_0x16761d];return _0x2622e6;};if(document[_0x19d5('0x0')]('1d')['checked']){marks++;}if(document[_0x19d5('0x0')]('2d')[_0x19d5('0x1')]){marks++;}if(document[_0x19d5('0x0')]('3a')['checked']){marks++;}if(document[_0x19d5('0x0')]('4d')['checked']){marks++;}if(document[_0x19d5('0x0')]('5c')['checked']){marks++;}if(document[_0x19d5('0x0')]('6a')[_0x19d5('0x1')]){marks++;}if(document[_0x19d5('0x0')]('7a')[_0x19d5('0x1')]){marks++;}if(document[_0x19d5('0x0')]('8a')[_0x19d5('0x1')]){marks++;}if(document[_0x19d5('0x0')]('9a')['checked']){marks++;}if(document[_0x19d5('0x0')](_0x19d5('0x2'))[_0x19d5('0x1')]){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivrnd = currentState.trivrnd                                      //flag to check if this part is already answred
@@ -267,7 +267,7 @@ So the company is mainly  working hard to improve hardware of the constructions 
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

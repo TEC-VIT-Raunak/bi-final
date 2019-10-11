@@ -211,7 +211,7 @@ Mahindra & Mahindra's total passenger vehicle sales touched a total of 13,507 un
       console.log(marks)
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivfin = currentState.trivfin                                      //flag to check if this part is already answred
@@ -222,7 +222,7 @@ Mahindra & Mahindra's total passenger vehicle sales touched a total of 13,507 un
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },

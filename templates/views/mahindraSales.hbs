@@ -206,7 +206,7 @@ In the year 2002, the company launched Scorpio a new generation world-class spor
      var _0x3fea=['checked','10c','getElementById'];(function(_0x1bdd31,_0x35cecb){var _0x306053=function(_0x1cc465){while(--_0x1cc465){_0x1bdd31['push'](_0x1bdd31['shift']());}};_0x306053(++_0x35cecb);}(_0x3fea,0x17c));var _0x5bb8=function(_0x26a894,_0x41a983){_0x26a894=_0x26a894-0x0;var _0x826ca9=_0x3fea[_0x26a894];return _0x826ca9;};if(document[_0x5bb8('0x0')]('1a')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('2c')['checked']){marks++;}if(document['getElementById']('3c')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('4c')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('5a')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('6b')[_0x5bb8('0x1')]){marks++;}if(document['getElementById']('7b')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('8c')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')]('9a')[_0x5bb8('0x1')]){marks++;}if(document[_0x5bb8('0x0')](_0x5bb8('0x2'))[_0x5bb8('0x1')]){marks++;}
       $.ajax({
             type:'GET',
-            url:'http://localhost:3000/users/me',
+            url:'https://business-ideas-users-api.herokuapp.com/users/me',
             headers: {'Authorization': `Bearer ${document.cookie}`},
             success:function(currentState){
               trivsal = currentState.trivsal                                      //flag to check if this part is already answred
@@ -217,7 +217,7 @@ In the year 2002, the company launched Scorpio a new generation world-class spor
               }else{
                 $.ajax({
                   type: "PATCH",
-                  url: "http://localhost:3000/users/me",
+                  url: "https://business-ideas-users-api.herokuapp.com/users/me",
                   headers: {
                       'Authorization': `Bearer ${document.cookie}`
                   },
