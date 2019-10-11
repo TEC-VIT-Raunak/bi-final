@@ -36,6 +36,6 @@ if(myParam=="samsung"){
 const next = ()=>{
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('id');
-    console.log('submitted')
+    //console.log('submitted')
     location.href='/question?id='+myParam
 }

@@ -107,7 +107,7 @@ app.get('/scoreboardr1',(req,res)=>{
     res.render('scoreboardr1')    
 })
 app.listen(port, () => {
-    console.log('Server is up on port ' + port)
+    //console.log('Server is up on port ' + port)
 })
 app.get('/login', (req, res) => {
     res.render('login')

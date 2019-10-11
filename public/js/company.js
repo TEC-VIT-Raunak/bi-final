@@ -17,7 +17,7 @@ const selected = (company,e)=>{
      document.getElementById(name).classList.add('light-green')
      document.getElementById(name).classList.add('lighten-4')
 }
-// console.log(submit)
+// //console.log(submit)
 const submitSend = ()=>{
     if(!document.cookie){
         
@@ -26,7 +26,7 @@ const submitSend = ()=>{
     else{
     var url = '/info?id=' + submit;
     
-    console.log("submitted company  "+submit)
+    //console.log("submitted company  "+submit)
     
     // PATCH request not working
     $.ajax({
@@ -42,10 +42,10 @@ const submitSend = ()=>{
         dataType: "json",
         contentType: "application/json",
         success: function (response) {
-            // console.log(response)
+            // //console.log(response)
             token = response.token
-            console.log(token)
-            console.log(response)
+            //console.log(token)
+            //console.log(response)
             // alert('success')
             location.href = url
             // return response
@@ -66,9 +66,9 @@ $(document).ready(function() {
             location.href='/login'
         }
         let user =  JSON.parse(localStorage.getItem('user'))
-        console.log(user.user.company)
+        //console.log(user.user.company)
         if(user.user.company){
-            console.log("I have a company")
+            //console.log("I have a company")
             location.href = '/question?id='+user.user.company    
         }
      }
@@ -76,7 +76,7 @@ $(document).ready(function() {
  });
  $(document).bind("contextmenu",function(e){
     e.preventDefault();
-    console.log(e.pageX + "," + e.pageY);
+    //console.log(e.pageX + "," + e.pageY);
     $("#cntnr").css("left",e.pageX);
     $("#cntnr").css("top",e.pageY);
    // $("#cntnr").hide(100);        
@@ -94,7 +94,7 @@ $(document).ready(function() {
   $("#op").text("You have selected "+$(this).text());
   });
   const Signout = ()=>{
-    console.log("tried to signout")
+    //console.log("tried to signout")
     document.cookie=''
     localStorage.clear()
     location.href='/login'

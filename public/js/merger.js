@@ -25,7 +25,7 @@ var weightRes
 function sal_invf(){
 	sal_inv = document.getElementById('sal_inv').value;
 	if(sal_inv>0){
-	// console.log(sal_inv)
+	// //console.log(sal_inv)
 	var docRef = db.collection("merger_block").doc(pair)
 	docRef.get().then((doc)=>{
 		pair_val=doc.data()
@@ -42,7 +42,7 @@ function sal_invf(){
 				document.getElementById("sales").innerHTML = updated_score
 				userDoc.set(user_data).then(()=>{
 					// document.getElementById("sal_inv").value = NaN
-				}).catch((err)=>console.log(err))
+				}).catch((err)=>//console.log(err))
 			})
 		})
 		
@@ -54,7 +54,7 @@ function sal_invf(){
 function pro_invf(){
 	pro_inv = document.getElementById('pro_inv').value;
 	if(pro_inv>0){
-	// console.log(pro_inv)
+	// //console.log(pro_inv)
 	var docRef = db.collection("merger_block").doc(pair)
 	docRef.get().then((doc)=>{
 		pair_val=doc.data()
@@ -68,7 +68,7 @@ function pro_invf(){
 				// production_score = user_data.production_scoredb
 				var updated_score = user_data.production_scoredb - pro_inv
 				user_data = {...user_data,production_scoredb:updated_score}
-				console.log(user_data)
+				//console.log(user_data)
 				document.getElementById("production").innerHTML = updated_score
 				userDoc.set(user_data).then(()=>{
 					// document.getElementById("pro_inv").value = NaN
@@ -84,7 +84,7 @@ function pro_invf(){
 function fin_invf(){
 	fin_inv = document.getElementById('fin_inv').value;
 	if(fin_inv>0){	
-	// console.log(fin_inv)
+	// //console.log(fin_inv)
 	var docRef = db.collection("merger_block").doc(pair)
 	docRef.get().then((doc)=>{
 		pair_val=doc.data()
@@ -98,7 +98,7 @@ function fin_invf(){
 				finance_score = user_data.finance_scoredb
 				var updated_score = finance_score - fin_inv
 				user_data = {...user_data,finance_scoredb:updated_score}
-				console.log(user_data)
+				//console.log(user_data)
 				document.getElementById("finance").innerHTML = updated_score
 				userDoc.set(user_data).then(()=>{
 					// document.getElementById("fin_inv").value = NaN
@@ -113,7 +113,7 @@ function fin_invf(){
 function res_invf(){
 	res_inv = document.getElementById('res_inv').value;
 	if(res_inv>0){	
-	// console.log(res_inv)
+	// //console.log(res_inv)
 	var docRef = db.collection("merger_block").doc(pair)
 	docRef.get().then((doc)=>{
 		pair_val=doc.data()

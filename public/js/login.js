@@ -9,7 +9,7 @@ $(document).ready(function() {
     let emailId = document.getElementById('email').value
     let passwd = document.getElementById('password').value
     let token
-   //  console.log(emailId, passwd)
+   //  //console.log(emailId, passwd)
    $.ajax({
        type: "POST",
        url: "https://business-ideas-users-api.herokuapp.com/users/login",
@@ -23,7 +23,7 @@ $(document).ready(function() {
        success: function (response) {
            
            token = response.token
-           console.log(token)
+           //console.log(token)
           
            localStorage.setItem('user', JSON.stringify(response))
            document.cookie=token
