@@ -11,6 +11,191 @@ var weightSal
 var weightPro
 var weightFin
 var weightRes
+var combi
+var thressal
+var thresrnd
+var thresfin
+var threspro
+
+if(pair=='pair1'||pair=='pair2'||pair=='pair3'||pair=='pair4'){
+	combi = 'samsungola' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+	
+})
+}
+
+if(pair=='pair5'||pair=='pair6'||pair=='pair7'||pair=='pair8'){
+	combi = 'samsungmahindra' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+	
+})
+}
+if(pair=='pair9'||pair=='pair10'||pair=='pair11'){
+	combi = 'samsungdlf' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+	
+})
+}
+if(pair=='pair12'||pair=='pair13'||pair=='pair14'){
+	combi = 'samsungioc' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+	
+})
+}
+if(pair=='pair15'||pair=='pair16'||pair=='pair17'||pair=='pair18'){
+	combi = 'mahindraola' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+})
+}
+if(pair=='pair19'||pair=='pair20'||pair=='pair21'){
+	combi = 'dlfola' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+
+	
+})
+}
+if(pair=='pair22'||pair=='pair23'||pair=='pair24'){
+	combi = 'olaioc' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+	
+})
+}
+if(pair=='pair25'||pair=='pair26'||pair=='pair27'){
+	combi = 'mahindradlf' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+	
+})
+}
+if(pair=='pair28'||pair=='pair29'||pair=='pair30'){
+	combi = 'mahindraioc' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+	
+})
+}
+if(pair=='pair31'||pair=='pair32'||pair=='pair33'||pair=='pair34'||pair=='pair35'){
+	combi = 'dlfioc' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+	
+})
+}
+if(pair=='pair1'||pair=='pair2'||pair=='pair3'||pair=='pair4'){
+	combi = 'samsungola' 
+	var thresDoc = db.collection("thresholds").doc(combi)
+	thresDoc.get().then((snap)=>{
+		thresDoc=snap.data()
+		thressal = thresDoc.sal
+		threspro = thresDoc.pro
+		thresrnd = thresDoc.rnd
+		thresfin = thresDoc.fin
+		document.getElementById("thes_sal").innerHTML = thresDoc.sal
+       	document.getElementById("thes_fin").innerHTML = thresDoc.fin
+       	document.getElementById("thes_pro").innerHTML = thresDoc.pro
+       	document.getElementById("thes_res").innerHTML = thresDoc.rnd
+	
+})
+}
+
+
 // $.ajax({
 //     type:'GET',
 //     url:'https://business-ideas-users-api.herokuapp.com/users/me',
@@ -164,7 +349,10 @@ pairDocRef.get().then((doc1)=>{
 
 db.collection("merger_block").doc(pair)
 	.onSnapshot(function(doc) {
-    mergeDocData = doc.data()
+	mergeDocData = doc.data()
+	if(thressal<=mergeDocData.score1&&threspro<=mergeDocData.score2&&thresrnd<=mergeDocData.score4&&thresfin<=mergeDocData.score3){
+		document.getElementById('submitbutton').classList.remove('disabled')
+	}
     document.getElementById("sal_merge_val").innerHTML = mergeDocData.score1
 	document.getElementById("pro_merge_val").innerHTML = mergeDocData.score2
 	document.getElementById("res_merge_val").innerHTML = mergeDocData.score4
@@ -178,11 +366,15 @@ $.ajax({
        success:function(data){
        	weightSal = data.weightSal/10
        	weightFin = data.weightFin/10
-       	weightPro = data.weightSal/10
+       	weightPro = data.weightPro/10
        	weightRes = data.weightRes/10
        	document.getElementById("weightRes").innerHTML = data.weightRes/10
        	document.getElementById("weightFin").innerHTML = data.weightFin/10
        	document.getElementById("weightSal").innerHTML = data.weightSal/10
-       	document.getElementById("weightPro").innerHTML = data.weightSal/10 
+       	document.getElementById("weightPro").innerHTML = data.weightPro/10 
        }
    })
+   function onSubmit(){
+	   if(document.getElementById('submitbutton').className!=="btn btn-success disabled")
+	alert("thanks your response is recorder. Wait for results.")
+   }

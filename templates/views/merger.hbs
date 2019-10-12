@@ -46,7 +46,7 @@
       <td id="weightSal"><span id='sales'><img src="images/805.gif" width="20px" height="20px"></td>
       <td><div class="ui input"><input id="sal_inv" type="number" name="sales"></div>
     <button onclick="sal_invf()" class="ui inverted purple button">Invest</button></td>
-      <td><span id="sal_merge_val"><img src="images/805.gif" width="20px" height="20px"></span></td>
+      <td><span id="sal_merge_val"><img src="images/805.gif" width="20px" height="20px"></span><span style="font-size: 20px;">/</span><span id="thes_sal"><img src="images/805.gif" width="20px" height="20px"></span></td>
     </tr>
     <tr>
       <td>Production</td>
@@ -54,7 +54,7 @@
       <td id="weightPro"><span id='sales'><img src="images/805.gif" width="20px" height="20px"></td>
       <td><div class="ui input"><input id="pro_inv" type="number" name="sales"></div>
     <button onclick="pro_invf()" class="ui inverted purple button">Invest</button></td>
-      <td><span id="pro_merge_val"><img src="images/805.gif" width="20px" height="20px"></span></td>
+      <td><span id="pro_merge_val"><img src="images/805.gif" width="20px" height="20px"></span><span style="font-size: 20px;">/</span><span id="thes_pro"><img src="images/805.gif" width="20px" height="20px"></<span></td>
     </tr>
     <tr>
       <td>Research</td>
@@ -62,7 +62,7 @@
       <td id="weightRes"><span id='sales'><img src="images/805.gif" width="20px" height="20px"></td>
       <td><div class="ui input"><input id="res_inv" type="number" name="sales"></div>
     <button onclick="res_invf()" class="ui inverted purple button">Invest</button></td>
-      <td><span id="res_merge_val"><img src="images/805.gif" width="20px" height="20px"></span></td>
+      <td><span id="res_merge_val"><img src="images/805.gif" width="20px" height="20px"></span><span style="font-size: 20px;">/</span><span id="thes_res"><img src="images/805.gif" width="20px" height="20px"></span></td>
     </tr>
     <tr>
       <td>Finance</td>
@@ -70,17 +70,16 @@
       <td id="weightFin"><span id='sales'><img src="images/805.gif" width="20px" height="20px"></td>
       <td><div class="ui input"><input id="fin_inv" type="number" name="sales"></div>
     <button onclick="fin_invf()" class="ui inverted purple button">Invest</button></td>
-      <td><span id="fin_merge_val"><img src="images/805.gif" width="20px" height="20px"></span></td>
+      <td><span id="fin_merge_val"><img src="images/805.gif" width="20px" height="20px"></span><span style="font-size: 20px;">/</span><span id="thes_fin"><img src="images/805.gif" width="20px" height="20px"></span></td>
     </tr>
   </tbody>
 </table>
 </div>
 
 
-<div class="sty1"></div>
-<div class="sty3"></div>
-<div class="sty4"></div>
-<div class="sty6"></div>
+
+
+<button type="button" class="btn btn-success disabled" id="submitbutton" style="margin-left:46%; position:absolute; bottom:15%;right:14%;" onclick='onSubmit()'>Submit</button>
 
 <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>

@@ -29,10 +29,10 @@ $(document).ready(function() {
            document.cookie=token
         //    console.log
            if(response.user.quizDone){
-               location.href='/question'
+               location.href='/merger'
            }
            else{
-            location.href='/rules'
+            location.href='/merger'
            }
            
        }
